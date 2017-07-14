@@ -1,12 +1,11 @@
-## macOS shortcuts
-
+# Useful macOS commands
 ## Hide a file/folder
 ```bash
-chflags hidden FILENAME_HERE
-```
+# Hide
+chflags hidden <FILE_NAME>
 
-```bash
-chflags nohidden FILENAME_HERE
+# Show
+chflags nohidden <FILE_NAME>
 ```
 
 ## Recursively delete .DS_STORE

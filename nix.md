@@ -1,5 +1,4 @@
 # Useful *nix commands
-
 ## nmap
 Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time), scan all ports (--allports, including 9100)
 ```bash
