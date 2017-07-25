@@ -1,12 +1,10 @@
 # Useful *nix commands
 ## nmap
-Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time), scan all ports (--allports, including 9100)
 ```bash
+# Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time), scan all ports (--allports, including 9100)
 nmap -n -Pn --allports -p 0-65535 127.0.0.1
-```
 
-Scan specific ports, no ping
-```bash
+# Scan specific ports, no ping
 nmap -Pn -p 80,443,555 127.0.0.1
 ```
 
@@ -54,6 +52,12 @@ for f in *.flac; do ffmpeg -i  "$f" -vn -c:a libmp3lame -b:a 320k "${f%.flac}.mp
 ```bash
 # Convert video to ogv
 ffmpeg -i <INPUT_FILE> -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
+
+# Convert video to webm
+ffmpeg -i <INPUT_FILE> -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -c:a libvorbis -q:a 8 -f webm out.webm
+
+# Convert every MOV file in the current directory to audioless webm
+for f in *.MOV; do ffmpeg -i  "$f" -an -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
 ```
 
 ##### Effects
@@ -80,6 +84,9 @@ ffmpeg -i <INPUT_FILE> -an -r 60 -vf "setpts=0.0625*PTS" -c:v libtheora -q:v 10 
 
 # Slow-Motion - 8x speedup, forced 30fps
 ffmpeg -i <INPUT_FILE> -an -r 30 -vf "setpts=8*PTS" -c:v libtheora -q:v 10 out.ogv
+
+# Convert every MOV file in the current directory to audioless webm, slowed down 8x
+for f in *.MOV; do ffmpeg -i  "$f" -an -r 30 -vf "setpts=8*PTS" -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
 ```
 
 ## imagemagick
