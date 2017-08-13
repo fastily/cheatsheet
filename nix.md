@@ -103,3 +103,9 @@ convert -dispose none -loop 0 -delay 100 *.JPG -resize 20% out.gif
 # Initalize a dev php server at localhost:8080 rooted at ./public_html
 php -S localhost:8080 -t public_html/
 ```
+
+## tar
+```bash
+# Extract a .tar.gz archive
+tar -xvzf <PATH_TO_TARBALL>
+```
