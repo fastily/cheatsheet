@@ -1,4 +1,4 @@
-# Useful *nix commands
+# Useful 'nix commands
 ## nmap
 ```bash
 # Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time), scan all ports (--allports, including 9100)
@@ -8,9 +8,14 @@ nmap -n -Pn --allports -p 0-65535 127.0.0.1
 nmap -Pn -p 80,443,555 127.0.0.1
 ```
 
+## dd
+Write an ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
+```bash
+dd bs=4M if=<PATH_TO_ISO> of=<PATH_TO_USB_BLOCK_DEVICE> && sync
+```
+
 ## smb
 To create a new SMB user, or to change the password of an existing user:
-
 ```bash
 smbpasswd -a USERNAME_TO_CREATE_OR_CHANGE
 ```
