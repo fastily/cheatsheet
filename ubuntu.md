@@ -17,3 +17,9 @@ gvfs-trash --empty
 dpkg -i <PATH_TO_DEB_FILE>
 apt-get install -f
 ```
+
+## Add a PPA and install
+```bash
+sudo add-apt-repository ppa:<PPA_NAME> && sudo apt-get update
+sudo apt-get install <PACKAGE_TO_INSTALL>
+```

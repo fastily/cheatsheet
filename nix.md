@@ -20,6 +20,14 @@ To create a new SMB user, or to change the password of an existing user:
 smbpasswd -a USERNAME_TO_CREATE_OR_CHANGE
 ```
 
+Different ways to get status/information about sambad:
+```bash
+smbstatus
+pdbedit -L -v
+net usershare info --long
+smbtree
+```
+
 ## VirtualBox
 To allow shared folders in Virtualbox with an Ubuntu guest, run
 ```bash
