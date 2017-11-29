@@ -1,4 +1,4 @@
-# Useful macOS commands
+# Useful macOS Commands
 ## Hide a file/folder
 ```bash
 # Hide

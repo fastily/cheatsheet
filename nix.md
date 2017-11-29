@@ -1,4 +1,4 @@
-# Useful 'nix commands
+# Useful 'nix Commands
 ## nmap
 ```bash
 # Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time)
@@ -129,4 +129,9 @@ php -S localhost:8080 -t public_html/
 ```bash
 # Extract a .tar.gz archive
 tar -xvzf <PATH_TO_TARBALL>
+```
+
+## Get external-facing IP address
+```bash
+curl icanhazip.com
 ```
