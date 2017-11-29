@@ -1,12 +1,20 @@
 # Useful 'nix commands
 ## nmap
 ```bash
-# Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time), scan all ports (--allports, including 9100)
-nmap -n -Pn --allports -p 0-65535 127.0.0.1
+# Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time)
+nmap -n -Pn -p 0-65535 127.0.0.1
 
 # Scan specific ports, no ping
 nmap -Pn -p 80,443,555 127.0.0.1
+
+# Scan all ports, be aggressive, probe for OS/app versions
+nmap -p 1-65535 -T4 -A -v 127.0.0.1
 ```
+
+#### other options
+* `-A` - enables OS/version detection, script scanning, and traceroute
+* `--allports` - enables scanning on 9100, a printer port.  Caveat: some printers print anything sent to this port.
+* `-T4`/`-T5` - use an aggressive/insane timing template
 
 ## dd
 Write an ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
