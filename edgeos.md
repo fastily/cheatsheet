@@ -23,8 +23,13 @@ set service ssh disable-password-authentication
 loadkey <USERNAME> <PATH_TO_PUBLIC_KEY>
 ```
 
-## User Info
-#### Show info about a user and login method(s)
+## show
+#### List user info
 ```
 show system login user <USERNAME>
+```
+
+#### List interfaces
+```
+show interfaces
 ```
