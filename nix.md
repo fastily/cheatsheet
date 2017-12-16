@@ -1,4 +1,3 @@
-# Useful 'nix Commands
 ## nmap
 ```bash
 # Scan all ports, no ping (-Pn), no DNS resolution (-n, helps reduce scan time)
@@ -134,4 +133,10 @@ tar -xvzf <PATH_TO_TARBALL>
 ## Get external-facing IP address
 ```bash
 curl icanhazip.com
+```
+
+## sox
+```bash
+# Generate a spectrogram for an audio file
+sox <INPUT_FILE> -n spectrogram -o out.png
 ```

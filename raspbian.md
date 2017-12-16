@@ -1,4 +1,3 @@
-# Useful Raspbian Commands
 ## Configure Settings:
 ```bash
 sudo raspi-config

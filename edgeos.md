@@ -1,5 +1,3 @@
-# Useful EdgeOS Commands
-
 ## Change Config
 ```
 configure
