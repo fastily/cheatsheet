@@ -109,6 +109,12 @@ ffmpeg -i <INPUT_FILE> -an -r 30 -vf "setpts=8*PTS" -c:v libtheora -q:v 10 out.o
 for f in *.MOV; do ffmpeg -i  "$f" -an -r 30 -vf "setpts=8*PTS" -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
 ```
 
+#### Both
+```bash
+# Trim audio/video (ex: start at 5 sec and go until 2 min)
+ffmpeg -i <INPUT_FILE> -c:a copy -c:v copy -ss 5 -t 120 out.<EXT>
+```
+
 ## imagemagick
 ```bash
 # Remove a white background from an image
