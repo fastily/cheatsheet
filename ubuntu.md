@@ -18,9 +18,15 @@ dpkg -i <PATH_TO_DEB_FILE>
 apt-get install -f
 ```
 
-## Add a PPA and install
+## PPA
 ```bash
+# Add a PPA
 add-apt-repository ppa:<PPA_NAME>
 apt-get update
 apt-get install <PACKAGE_TO_INSTALL>
+
+# Remove a PPA
+apt-add-repository --remove ppa:<PPA_NAME>
+apt-get update
 ```
+

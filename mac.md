@@ -27,3 +27,12 @@ zip -e <ARCHIVE>.zip input1.txt input2.txt
 # Encypt and zip a directory
 zip -er <ARCHIVE>.zip <PATH_TO_DIRECTORY>
 ```
+
+## Software Update via Terminal
+```bash
+# Check for new updates
+softwareupdate -l
+
+# Install an update
+softwareupdate -i <FULL_NAME_OF_UPDATE>
+```
