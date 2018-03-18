@@ -30,3 +30,8 @@ apt-add-repository --remove ppa:<PPA_NAME>
 apt-get update
 ```
 
+## mdadm
+```bash
+# Check array status
+mdadm -D /dev/<NAME_OF_ARRAY>
+```
