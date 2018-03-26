@@ -35,3 +35,9 @@ apt-get update
 # Check array status
 mdadm -D /dev/<NAME_OF_ARRAY>
 ```
+
+## Ubuntu Version
+```bash
+# Get your ubuntu version
+lsb_release -r -s
+```
