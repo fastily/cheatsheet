@@ -146,3 +146,8 @@ curl icanhazip.com
 # Generate a spectrogram for an audio file
 sox <INPUT_FILE> -n spectrogram -o out.png
 ```
+
+## View binary files
+```bash
+xxd -b <THE_FILE> | less
+```
