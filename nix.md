@@ -158,9 +158,9 @@ xxd -b <THE_FILE> | less
 screen <PROGRAM_TO_RUN> <PROGRAM_ARGUMENTS>
 ```
 * Enter command mode, use shortcut `Control` + `a` while running a screen.
-** To detach from the screen, press `d`.
-** To kill the current screen, press `k`.
-** To get documentation, press `?`.
+ * To detach from the screen, press `d`.
+ * To kill the current screen, press `k`.
+ * To get documentation, press `?`.
 
 ```bash
 # List screens from bash
@@ -168,4 +168,10 @@ screen -ls
 
 # Reattach a screen
 screen -r <PID> # pid comes from doing screen -ls
+```
+
+## python3 - start webserver in CWD
+```bash
+# requires python3
+python -m http.server 8000
 ```
