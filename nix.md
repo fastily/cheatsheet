@@ -170,8 +170,14 @@ screen -ls
 screen -r <PID> # pid comes from doing screen -ls
 ```
 
-## python3 - start webserver in CWD
+## python3
 ```bash
-# requires python3
+# start webserver in current working directory
 python -m http.server 8000
+```
+
+## yotuube-dl
+```bash
+# Download embed-only vimeo videos
+youtube-dl <LINK_TO_VIDEO> --referer <LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>
 ```
