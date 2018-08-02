@@ -181,3 +181,16 @@ python -m http.server 8000
 # Download embed-only vimeo videos
 youtube-dl <LINK_TO_VIDEO> --referer <LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>
 ```
+
+## find
+```bash
+# find all files in a directory older than 10 days and delete them
+find <PATH_TO_DIRECTORY> -mtime +10 -name '*.pdf' -type f -delete
+
+
+## Recursively delete music metadata files
+find . -name '*.nfo' -type f -delete
+find . -name '*.m3u' -type f -delete
+find . -name '*.m3u8' -type f -delete
+
+```

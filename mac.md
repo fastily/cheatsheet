@@ -12,13 +12,6 @@ chflags nohidden <FILE_NAME>
 find . -name '*.DS_Store' -type f -delete
 ```
 
-## Recursively delete music metadata files
-```bash
-find . -name '*.nfo' -type f -delete
-find . -name '*.m3u' -type f -delete
-find . -name '*.m3u8' -type f -delete
-```
-
 ## Make password-protected, encypted zips
 ```bash
 # Encypt and zip two files
