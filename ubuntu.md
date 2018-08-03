@@ -41,3 +41,8 @@ mdadm -D /dev/<NAME_OF_ARRAY>
 # Get your ubuntu version
 lsb_release -r -s
 ```
+
+## Enable pinyin keyboard input
+```bash
+sudo apt-get install ibus-pinyin 
+```

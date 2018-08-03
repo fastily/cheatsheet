@@ -16,19 +16,19 @@ nmap -p 1-65535 -T4 -A -v 127.0.0.1
 * `-T4`/`-T5` - use an aggressive/insane timing template
 
 ## dd
-Write an ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
 ```bash
+# Write ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
 dd bs=4M if=<PATH_TO_ISO> of=<PATH_TO_USB_BLOCK_DEVICE> && sync
 ```
 
 ## smb
-To create a new SMB user, or to change the password of an existing user:
 ```bash
+# create SMB user or change the password of an existing user
 smbpasswd -a USERNAME_TO_CREATE_OR_CHANGE
 ```
 
-Different ways to get status/information about sambad:
 ```bash
+# Various ways to get status/information about sambad:
 smbstatus
 pdbedit -L -v
 net usershare info --long
@@ -36,16 +36,14 @@ smbtree
 ```
 
 ## VirtualBox
-To allow shared folders in Virtualbox with an Ubuntu guest, run
 ```bash
+# Allow shared folders in Virtualbox w/ Ubuntu guest.  Run command on ubuntu guest.
 sudo adduser $( whoami ) vboxsf
 ```
-on the Ubuntu guest.
 
 ## ssh-keygen
-Generate a new rsa private/public key pair.
-
 ```bash
+# Generate a new rsa private/public key pair.
 ssh-keygen -t rsa -b 8192 -C "DESCRIPTION_HERE"
 ```
 
@@ -188,9 +186,33 @@ youtube-dl <LINK_TO_VIDEO> --referer <LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>
 find <PATH_TO_DIRECTORY> -mtime +10 -name '*.pdf' -type f -delete
 
 
-## Recursively delete music metadata files
+# Recursively delete music metadata files
 find . -name '*.nfo' -type f -delete
 find . -name '*.m3u' -type f -delete
 find . -name '*.m3u8' -type f -delete
 
+```
+
+## django
+```bash
+# create new project
+django-admin startproject <PROJECT_NAME>
+
+# add app to project
+python3 manage.py startapp <APP_NAME>
+
+# start server
+python3 manage.py runserver
+
+# create migration
+python3 manage.py makemigrations
+
+# migrate db
+python3 manage.py migrate
+
+# create superuser for admin panel
+python3 manage.py createsuperuser
+
+# collect static files into one folder
+python3 manage.py collectstatic
 ```
