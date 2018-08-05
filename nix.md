@@ -25,9 +25,7 @@ dd bs=4M if=<PATH_TO_ISO> of=<PATH_TO_USB_BLOCK_DEVICE> && sync
 ```bash
 # create SMB user or change the password of an existing user
 smbpasswd -a USERNAME_TO_CREATE_OR_CHANGE
-```
 
-```bash
 # Various ways to get status/information about sambad:
 smbstatus
 pdbedit -L -v
@@ -35,7 +33,7 @@ net usershare info --long
 smbtree
 ```
 
-## VirtualBox
+## virtualbox
 ```bash
 # Allow shared folders in Virtualbox w/ Ubuntu guest.  Run command on ubuntu guest.
 sudo adduser $( whoami ) vboxsf
@@ -145,8 +143,9 @@ curl icanhazip.com
 sox <INPUT_FILE> -n spectrogram -o out.png
 ```
 
-## View binary files
+## xxd
 ```bash
+# view binary files
 xxd -b <THE_FILE> | less
 ```
 

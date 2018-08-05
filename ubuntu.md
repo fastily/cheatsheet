@@ -1,6 +1,7 @@
 # Useful Ubuntu Commands
 
 ## Trash
+### < 18.04
 ```bash
 # Move a file or directory to the trash
 gvfs-trash <FILENAME>
@@ -16,6 +17,15 @@ gvfs-trash --empty
 ```bash
 dpkg -i <PATH_TO_DEB_FILE>
 apt-get install -f
+```
+
+### >= 18.04
+```bash
+# move file/directory to trash
+gio trash <FILENAME>
+
+# empty the trash
+gio trash --empty
 ```
 
 ## PPA
