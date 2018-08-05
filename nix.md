@@ -216,3 +216,9 @@ python3 manage.py createsuperuser
 # collect static files into one folder
 python3 manage.py collectstatic
 ```
+
+## git
+```bash
+# remove a file from git index but don't delete the local copy.
+git rm --cached <PATH_TO_FILE>
+```
