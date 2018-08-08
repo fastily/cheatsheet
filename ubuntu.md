@@ -12,13 +12,6 @@ gvfs-ls trash://
 # Empty the Trash
 gvfs-trash --empty
 ```
-
-## Install a .deb
-```bash
-dpkg -i <PATH_TO_DEB_FILE>
-apt-get install -f
-```
-
 ### >= 18.04
 ```bash
 # move file/directory to trash
@@ -26,6 +19,12 @@ gio trash <FILENAME>
 
 # empty the trash
 gio trash --empty
+```
+
+## Install a .deb
+```bash
+dpkg -i <PATH_TO_DEB_FILE>
+apt-get install -f
 ```
 
 ## PPA

@@ -197,7 +197,7 @@ find . -name '*.m3u8' -type f -delete
 # create new project
 django-admin startproject <PROJECT_NAME>
 
-# add app to project
+# add sub-app to project
 python3 manage.py startapp <APP_NAME>
 
 # start server
