@@ -8,6 +8,9 @@ nmap -Pn -p 80,443,555 127.0.0.1
 
 # Scan all ports, be aggressive, probe for OS/app versions
 nmap -p 1-65535 -T4 -A -v 127.0.0.1
+
+# Host discovery on a CIDR range
+nmap -sP 10.0.1.0/24
 ```
 
 #### other options
@@ -18,7 +21,7 @@ nmap -p 1-65535 -T4 -A -v 127.0.0.1
 ## dd
 ```bash
 # Write ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
-dd bs=4M if=<PATH_TO_ISO> of=<PATH_TO_USB_BLOCK_DEVICE> && sync
+sudo dd bs=4M if='<PATH_TO_ISO>' of='<PATH_TO_USB_BLOCK_DEVICE>' && sync
 ```
 
 ## smb
@@ -42,23 +45,23 @@ sudo adduser $( whoami ) vboxsf
 ## ssh-keygen
 ```bash
 # Generate a new rsa private/public key pair.
-ssh-keygen -t rsa -b 8192 -C "DESCRIPTION_HERE"
+ssh-keygen -t rsa -b 8192 -C '<DESCRIPTION>'
 ```
 
 ## ffmpeg
 #### Audio
 ```bash
 # Convert audio to mp3
-ffmpeg -i <INPUT_FILE> -vn -c:a libmp3lame -b:a 320k out.mp3
+ffmpeg -i '<INPUT_FILE>' -vn -c:a libmp3lame -b:a 320k out.mp3
 
 # Convert audio to flac
-ffmpeg -i <INPUT_FILE> -vn -c:a flac out.flac
+ffmpeg -i '<INPUT_FILE>' -vn -c:a flac out.flac
 
 # Convert audio to wav
-ffmpeg -i <INPUT_FILE> -vn -c:a pcm_s16le out.wav
+ffmpeg -i '<INPUT_FILE>' -vn -c:a pcm_s16le out.wav
 
 # Convert audio to oga
-ffmpeg -i <INPUT_FILE> -vn -c:a libvorbis -q:a 10 out.oga
+ffmpeg -i '<INPUT_FILE>' -vn -c:a libvorbis -q:a 10 out.oga
 
 # Convert every flac file in the current directory to mp3
 for f in *.flac; do ffmpeg -i  "$f" -vn -c:a libmp3lame -b:a 320k "${f%.flac}.mp3"; done;
@@ -67,10 +70,10 @@ for f in *.flac; do ffmpeg -i  "$f" -vn -c:a libmp3lame -b:a 320k "${f%.flac}.mp
 #### Video
 ```bash
 # Convert video to ogv
-ffmpeg -i <INPUT_FILE> -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
+ffmpeg -i '<INPUT_FILE>' -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
 
 # Convert video to webm
-ffmpeg -i <INPUT_FILE> -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -c:a libvorbis -q:a 8 -f webm out.webm
+ffmpeg -i '<INPUT_FILE>' -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -c:a libvorbis -q:a 8 -f webm out.webm
 
 # Convert every MOV file in the current directory to audioless webm
 for f in *.MOV; do ffmpeg -i  "$f" -an -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
@@ -88,7 +91,7 @@ for f in *.MOV; do ffmpeg -i  "$f" -an -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4
 Example:
 ```bash
 # Rotate video 90° Clockwise
-ffmpeg -i <INPUT_FILE> -vf "transpose=1" -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
+ffmpeg -i '<INPUT_FILE>' -vf "transpose=1" -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
 ```
 * [Rotate Guide](https://stackoverflow.com/a/9570992/5987787)
 * [How to rotate a video 180° with FFmpeg?](https://superuser.com/questions/578321/how-to-rotate-a-video-180-with-ffmpeg)
@@ -96,10 +99,10 @@ ffmpeg -i <INPUT_FILE> -vf "transpose=1" -c:v libtheora -q:v 10 -c:a libvorbis -
 ##### Slow-Motion/Timelapse
 ```bash
 # Timelapse - 16x slowdown, forced 60fps
-ffmpeg -i <INPUT_FILE> -an -r 60 -vf "setpts=0.0625*PTS" -c:v libtheora -q:v 10 out.ogv
+ffmpeg -i '<INPUT_FILE>' -an -r 60 -vf "setpts=0.0625*PTS" -c:v libtheora -q:v 10 out.ogv
 
 # Slow-Motion - 8x speedup, forced 30fps
-ffmpeg -i <INPUT_FILE> -an -r 30 -vf "setpts=8*PTS" -c:v libtheora -q:v 10 out.ogv
+ffmpeg -i '<INPUT_FILE>' -an -r 30 -vf "setpts=8*PTS" -c:v libtheora -q:v 10 out.ogv
 
 # Convert every MOV file in the current directory to audioless webm, slowed down 8x
 for f in *.MOV; do ffmpeg -i  "$f" -an -r 30 -vf "setpts=8*PTS" -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
@@ -108,13 +111,13 @@ for f in *.MOV; do ffmpeg -i  "$f" -an -r 30 -vf "setpts=8*PTS" -c:v libvpx-vp9 
 #### Both
 ```bash
 # Trim audio/video (ex: start at 5 sec and go until 2 min)
-ffmpeg -i <INPUT_FILE> -c:a copy -c:v copy -ss 5 -t 120 out.<EXT>
+ffmpeg -i '<INPUT_FILE>' -c:a copy -c:v copy -ss 5 -t 120 out.<EXT>
 ```
 
 ## imagemagick
 ```bash
 # Remove a white background from an image
-convert <INPUT_FILE> -fuzz 20% -transparent white out.png
+convert '<INPUT_FILE>' -fuzz 20% -transparent white out.png
 
 # Make a GIF from JPG files in a directory
 convert -dispose none -loop 0 -delay 100 *.JPG -resize 20% out.gif
@@ -129,7 +132,7 @@ php -S localhost:8080 -t public_html/
 ## tar
 ```bash
 # Extract a .tar.gz archive
-tar -xvzf <PATH_TO_TARBALL>
+tar -xvzf '<PATH_TO_TARBALL>'
 ```
 
 ## Get external-facing IP address
@@ -140,19 +143,19 @@ curl icanhazip.com
 ## sox
 ```bash
 # Generate a spectrogram for an audio file
-sox <INPUT_FILE> -n spectrogram -o out.png
+sox '<INPUT_FILE>' -n spectrogram -o out.png
 ```
 
 ## xxd
 ```bash
 # view binary files
-xxd -b <THE_FILE> | less
+xxd -b '<THE_FILE>' | less
 ```
 
 ## screen
 ```bash
 # Start a new screen
-screen <PROGRAM_TO_RUN> <PROGRAM_ARGUMENTS>
+screen '<PROGRAM_TO_RUN>' '<PROGRAM_ARGUMENTS>'
 ```
 * Enter command mode, use shortcut `Control` + `a` while running a screen.
  * To detach from the screen, press `d`.
@@ -164,7 +167,7 @@ screen <PROGRAM_TO_RUN> <PROGRAM_ARGUMENTS>
 screen -ls
 
 # Reattach a screen
-screen -r <PID> # pid comes from doing screen -ls
+screen -r '<PID>' # pid comes from doing screen -ls
 ```
 
 ## python3
@@ -176,13 +179,13 @@ python -m http.server 8000
 ## yotuube-dl
 ```bash
 # Download embed-only vimeo videos
-youtube-dl <LINK_TO_VIDEO> --referer <LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>
+youtube-dl '<LINK_TO_VIDEO>' --referer '<LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>'
 ```
 
 ## find
 ```bash
 # find all files in a directory older than 10 days and delete them
-find <PATH_TO_DIRECTORY> -mtime +10 -name '*.pdf' -type f -delete
+find '<PATH_TO_DIRECTORY>' -mtime +10 -name '*.pdf' -type f -delete
 
 
 # Recursively delete music metadata files
@@ -195,10 +198,10 @@ find . -name '*.m3u8' -type f -delete
 ## django
 ```bash
 # create new project
-django-admin startproject <PROJECT_NAME>
+django-admin startproject '<PROJECT_NAME>'
 
 # add sub-app to project
-python3 manage.py startapp <APP_NAME>
+python3 manage.py startapp '<APP_NAME>'
 
 # start server
 python3 manage.py runserver
@@ -219,5 +222,10 @@ python3 manage.py collectstatic
 ## git
 ```bash
 # remove a file from git index but don't delete the local copy.
-git rm --cached <PATH_TO_FILE>
+git rm --cached '<PATH_TO_FILE>'
+```
+
+## eyeD3
+```bash
+eyeD3 -A '<ALBUM_NAME>' -b '<ALBUM_NAME>' --add-image '<PATH_TO_FILE>':FRONT_COVER '<INPUT_MP3>'
 ```
