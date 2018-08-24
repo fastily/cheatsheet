@@ -223,9 +223,18 @@ python3 manage.py collectstatic
 ```bash
 # remove a file from git index but don't delete the local copy.
 git rm --cached '<PATH_TO_FILE>'
+
+# squash the last 3 commits
+git reset --soft HEAD~3 && git commit -m '<NEW_MESSAGE>' && git push -f
 ```
 
 ## eyeD3
 ```bash
 eyeD3 -A '<ALBUM_NAME>' -b '<ALBUM_NAME>' --add-image '<PATH_TO_FILE>':FRONT_COVER '<INPUT_MP3>'
+```
+
+## pip
+```bash
+# upgrade a package
+pip install --upgrade '<PACKAGE_NAME>'
 ```
