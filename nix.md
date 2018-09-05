@@ -237,4 +237,7 @@ eyeD3 -A '<ALBUM_NAME>' -b '<ALBUM_NAME>' --add-image '<PATH_TO_FILE>':FRONT_COV
 ```bash
 # upgrade a package
 pip install --upgrade '<PACKAGE_NAME>'
+
+# list outdated packages
+pip list --outdated
 ```
