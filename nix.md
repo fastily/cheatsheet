@@ -175,6 +175,9 @@ eyeD3 -A '<ALBUM_NAME>' -b '<ALBUM_NAME>' --add-image '<PATH_TO_FILE>':FRONT_COV
 
 ## pip
 ```bash
+# generate requirements.txt
+pip freeze > requirements.txt
+
 # upgrade a package
 pip install --upgrade '<PACKAGE_NAME>'
 
