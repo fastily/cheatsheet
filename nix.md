@@ -190,3 +190,21 @@ pip list --outdated
 # download all media files on a page
 wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off  '<WEBSITE_URL_HERE>'
 ```
+
+## ufw
+```bash
+# see all registered firewall profiles
+ufw app list
+
+# allow a profile/rule
+ufw allow '<PROFILE/PORT>'
+
+# delete an allow rule
+ufw delete allow '<PROFILE/PORT>'
+
+# start firewall
+ufw enable
+
+# show status
+ufw status
+```
