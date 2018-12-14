@@ -166,6 +166,12 @@ git rm --cached '<PATH_TO_FILE>'
 
 # squash the last 3 commits
 git reset --soft HEAD~3 && git commit -m '<NEW_MESSAGE>' && git push -f
+
+## add upstream to a GitHub fork
+git remote add upstream 'https://github.com/<ORIGINAL_OWNER>/<ORIGINAL_REPOSITORY>.git'
+
+## sync a GitHub fork with master.  Be sure to have added 'upstream' as a remote
+git fetch upstream && git checkout master && git merge upstream/master
 ```
 
 ## eyeD3
@@ -207,4 +213,16 @@ ufw enable
 
 # show status
 ufw status
+```
+
+## nginx
+```bash
+# restart an nginx service
+sudo nginx -t && sudo systemctl restart nginx
+```
+
+## gunicorn
+```bash
+# restart a gunicorn service
+sudo systemctl restart gunicorn
 ```
