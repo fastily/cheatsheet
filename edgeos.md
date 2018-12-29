@@ -10,24 +10,35 @@ exit
 ```
 
 ## ssh
-#### Disable password-based auth
-```
+```bash
+# Disable password-based auth
 set service ssh disable-password-authentication
-```
 
-#### Install public key
-```
+# Install Public Key
 # Copy public key to the router (e.g. in /tmp/blah.pub), then do:
-loadkey <USERNAME> <PATH_TO_PUBLIC_KEY>
+loadkey '<USERNAME>' '<PATH_TO_PUBLIC_KEY>'
 ```
 
 ## show
-#### List user info
-```
-show system login user <USERNAME>
+```bash
+# List user info
+show system login user '<USERNAME>'
+
+# List interfaces
+show interfaces
 ```
 
-#### List interfaces
-```
-show interfaces
+## upgrade
+```bash
+# show current version
+show version
+
+# show current storage
+show system image storage
+
+# upgrade image
+add system image 'https://dl.ubnt.com/.../firmware.tar'
+
+# confirm it worked; be sure to reboot when done
+show system image
 ```
