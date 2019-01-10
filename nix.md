@@ -75,11 +75,6 @@ php -S localhost:8080 -t public_html/
 tar -xvzf '<PATH_TO_TARBALL>'
 ```
 
-## Get external-facing IP address
-```bash
-curl icanhazip.com
-```
-
 ## sox
 ```bash
 # Generate a spectrogram for an audio file
@@ -172,6 +167,9 @@ git remote add upstream 'https://github.com/<ORIGINAL_OWNER>/<ORIGINAL_REPOSITOR
 
 ## sync a GitHub fork with master.  Be sure to have added 'upstream' as a remote
 git fetch upstream && git checkout master && git merge upstream/master
+
+## show content of last stash
+git stash show -p
 ```
 
 ## eyeD3
