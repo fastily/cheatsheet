@@ -224,3 +224,9 @@ sudo nginx -t && sudo systemctl restart nginx
 # restart a gunicorn service
 sudo systemctl restart gunicorn
 ```
+
+## lsb_release
+```bash
+# Get version information about this linux distro
+lsb_release -a
+```
