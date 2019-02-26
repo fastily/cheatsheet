@@ -70,7 +70,7 @@ docker network connect '<NETWORK_ID>' '<CONTAINER_ID>'
 docker network disconnect '<NETWORK_ID>' '<CONTAINER_ID>'
 ```
 
-## iamge
+## image
 ```bash
 # list downloaded images
 docker image ls
@@ -78,15 +78,30 @@ docker image ls
 # show image layers/history
 docker image history '<IMAGE_NAME>'
 
-# 
+# json metadata about an image
+docker image inspect '<IMAGE_NAME>'
 
+# give a new tag to an existing image
+docker image tag '<IMAGE_NAME>':'<OPTIONAL_TAG_NAME>' '<USERNAME>'/'<IMAGE_NAME>':'<OPTIONAL_TAG_NAME>'
+
+# upload changed layers to docker hub
+docker image push '<REPOSITORY>':'<OPTIONAL_TAG_NAME>'
+
+# build an image based on a dockerfile 
+docker image build -t '<TAG_NAME>' '<DIRECTORY_TO_BUILD_IN>'
+
+#remove an image from the cache
+docker image rm '<IMAGE_NAME>'
 ```
-
-
 
 ## misc
 ```bash
 # get version/check that docker is working
 docker version
-```
 
+# login to push
+docker login
+
+# logout
+docker logout
+```
