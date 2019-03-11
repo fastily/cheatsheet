@@ -112,6 +112,24 @@ docker volume ls
 VOLUME PATH/TO/DIRECTORY
 ```
 
+## docker-compose
+```bash
+# setup all volumes/networks and start containers, run detached
+docker-compose up -d
+
+# stop all containers and remove containers/volumes/networks
+docker-compose down
+
+# view logs
+docker-compose logs
+
+# view containers, running and stopped
+docker-compose ps
+
+# view running processes
+docker-compose top
+```
+
 ## misc
 ```bash
 # get version/check that docker is working
