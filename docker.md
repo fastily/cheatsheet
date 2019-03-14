@@ -104,6 +104,9 @@ docker image rm '<IMAGE_ID>'
 ```bash
 # list volumes
 docker volume ls
+
+# delete unused local volumes
+docker volume prune -f
 ```
 
 ## dockerfile
@@ -117,8 +120,11 @@ VOLUME PATH/TO/DIRECTORY
 # setup all volumes/networks and start containers, run detached
 docker-compose up -d
 
-# stop all containers and remove containers/volumes/networks
-docker-compose down
+# stop all containers and remove containers/volumes
+docker-compose down -v
+
+# (re)build all custom images
+docker-compose build
 
 # view logs
 docker-compose logs
