@@ -136,6 +136,28 @@ docker-compose ps
 docker-compose top
 ```
 
+## swarm
+```bash
+# list running swarm nodes
+docker node ls
+
+# create a service/container and run a command
+docker service create '<IMAGE_NAME>' '<COMMAND_TO_RUN>'
+
+# list running services/containers
+docker service ls
+
+# list tasks for a service
+docker service ps '<CONTAINER_ID>'
+
+# scale up a service to 3 instances
+docker service update '<SERVICE_ID>' --replicas 3
+
+# remove a service
+docker service rm '<SERVICE_NAME>'
+
+```
+
 ## misc
 ```bash
 # get version/check that docker is working
@@ -146,4 +168,7 @@ docker login
 
 # logout
 docker logout
+
+# enable swarm
+docker swarm init
 ```

@@ -26,6 +26,9 @@ show system login user '<USERNAME>'
 
 # List interfaces
 show interfaces
+
+# show storage
+show system storage
 ```
 
 ## upgrade
@@ -41,4 +44,13 @@ add system image 'https://dl.ubnt.com/.../firmware.tar'
 
 # confirm it worked; be sure to reboot when done
 show system image
+```
+
+## misc
+```bash
+# reboot
+reboot
+
+# shutdown
+shutdown
 ```
