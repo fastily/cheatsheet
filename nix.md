@@ -192,7 +192,10 @@ pip list --outdated
 ## wget
 ```bash
 # download all media files on a page
-wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off  '<WEBSITE_URL_HERE>'
+wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off  '<WEBSITE_URL>'
+
+# resume cancelled (ctrl-c) download.  Server must support range header.
+wget -c '<WEBSITE_URL>'
 ```
 
 ## ufw
