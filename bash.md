@@ -44,3 +44,20 @@ fg %N # where N is the job number obtained from jobs
 # bring job to background
 bg %N # where N is the job number obtained from jobs
 ```
+
+
+## Arrays
+```bash
+# Prepend Foo to every array element
+${arr[@]/#/Foo}
+
+# Append Foo to every array element
+${arr[@]/%/Foo}
+```
+
+
+## Special Variables
+```bash
+# Get cli args but only from the 2nd element and onwards
+"${@:2}"
+```
