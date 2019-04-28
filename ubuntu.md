@@ -50,3 +50,16 @@ mdadm -D /dev/<NAME_OF_ARRAY>
 # Get your ubuntu version
 lsb_release -r -s
 ```
+
+## lsb_release
+```bash
+# Get version information about this debian distro
+lsb_release -a
+```
+
+## lsblk
+```bash
+# list out all block devices
+lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
+
+```
