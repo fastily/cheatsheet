@@ -63,3 +63,21 @@ lsb_release -a
 lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
 
 ```
+
+## smart
+```bash
+# enable smart on a drive
+sudo smartctl -s on '/dev/<DEVICE_ID>'
+
+# estimate how long it will take to run a test
+sudo smartctl -c '/dev/<DEVICE_ID>'
+
+# run a smart test
+sudo smartctl -t short '/dev/<DEVICE_ID>'
+
+# view drive's test stats
+sudo smartctl -l selftest '/dev/<DEVICE_ID>'
+
+# view detailed smart information for a SATA drive
+sudo smartctl -a -d ata '/dev/<DEVICE_ID>'
+```
