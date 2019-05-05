@@ -16,6 +16,7 @@ ffmpeg -i '<INPUT_FILE>' -vn -c:a libvorbis -q:a 10 out.oga
 for f in *.flac; do ffmpeg -i  "$f" -vn -c:a libmp3lame -b:a 320k "${f%.flac}.mp3"; done;
 ```
 
+
 ## Transcode Video
 ```bash
 # Convert video to ogv
@@ -27,6 +28,14 @@ ffmpeg -i '<INPUT_FILE>' -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -c:a
 # Convert every MOV file in the current directory to audioless webm
 for f in *.MOV; do ffmpeg -i "$f" -an -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
 ```
+
+
+## Trim audio/video
+```bash
+# Trim audio/video (ex: start at 5 sec and go until 2 min)
+ffmpeg -i '<INPUT_FILE>' -c:a copy -c:v copy -ss 5 -t 120 out.<EXT>
+```
+
 
 ## Video Effects
 ### Rotation
@@ -46,7 +55,6 @@ ffmpeg -i '<INPUT_FILE>' -c copy -metadata:s:v rotate="90" '<OUTPUT_FILE>'
 ```
 * [Rotate Guide](https://stackoverflow.com/a/9570992/5987787)
 * [How to rotate a video 180° with FFmpeg?](https://superuser.com/questions/578321/how-to-rotate-a-video-180-with-ffmpeg)
-
 
 ### Slow-Motion/Timelapse
 ```bash
