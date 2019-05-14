@@ -33,6 +33,9 @@ docker container top '<CONTAINER_ID>'
 # (forcibly) remove a cotnainer
 docker container rm -f '<CONTAINER_ID>'
 
+# remove all stopped containers
+docker rm $(docker ps -a -q)
+
 # show json metadata about container (startup config, volumes, networking, etc)
 docker container inspect '<CONTAINER_ID>'
 
@@ -96,8 +99,11 @@ docker image push '<REPOSITORY>':'<OPTIONAL_TAG_NAME>'
 # build an image based on a dockerfile 
 docker image build -t '<TAG_NAME>' '<DIRECTORY_TO_BUILD_IN>'
 
-#remove an image from the cache
+# remove an image from the cache
 docker image rm '<IMAGE_ID>'
+
+# remove all images without at least one associated container
+docker image prune -a
 ```
 
 ## volume
