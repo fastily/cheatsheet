@@ -4,6 +4,15 @@
 sudo dd bs=4M if='<PATH_TO_ISO>' of='<PATH_TO_USB_BLOCK_DEVICE>' && sync
 ```
 
+## dig
+```bash
+# get everything
+dig example.com
+
+# return MX records only
+dig example.com MX
+```
+
 ## eyeD3
 ```bash
 eyeD3 -A '<ALBUM_NAME>' -b '<ALBUM_NAME>' --add-image '<PATH_TO_FILE>':FRONT_COVER '<INPUT_MP3>'
@@ -161,6 +170,12 @@ wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off  '<WEBSITE_URL>'
 
 # resume cancelled (ctrl-c) download.  Server must support range header.
 wget -c '<WEBSITE_URL>'
+```
+
+## whois
+```bash
+# get whois data for host
+whois example.com
 ```
 
 ## xxd
