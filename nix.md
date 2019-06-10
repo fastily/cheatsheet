@@ -47,6 +47,12 @@ git fetch upstream && git checkout master && git merge upstream/master
 
 ## show content of last stash
 git stash show -p
+
+## delete your local changes and replace with what is currently on master
+git fetch --all && git reset --hard origin/master
+
+## don't use your system keychain for this repository
+git config --local credential.helper ""
 ```
 
 ## grep
