@@ -49,10 +49,7 @@ mdadm -D /dev/<NAME_OF_ARRAY>
 ```bash
 # Get your ubuntu version
 lsb_release -r -s
-```
 
-## lsb_release
-```bash
 # Get version information about this debian distro
 lsb_release -a
 ```
@@ -80,4 +77,19 @@ sudo smartctl -l selftest '/dev/<DEVICE_ID>'
 
 # view detailed smart information for a SATA drive
 sudo smartctl -a -d ata '/dev/<DEVICE_ID>'
+```
+
+## Useful Programs
+```bash
+# SMART monitoring and GUI
+sudo apt -y install smartmontools gsmartcontrol
+
+# GUI Partioner
+sudo apt -y install gparted
+
+# screen recorder
+sudo apt -y install kazam
+
+# zfs
+sudo apt -y install zfsutils-linux
 ```
