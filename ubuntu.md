@@ -4,7 +4,7 @@
 ### < 18.04
 ```bash
 # Move a file or directory to the trash
-gvfs-trash <FILENAME>
+gvfs-trash '<FILENAME>'
 
 # See contents of trash
 gvfs-ls trash://
@@ -15,7 +15,7 @@ gvfs-trash --empty
 ### >= 18.04
 ```bash
 # move file/directory to trash
-gio trash <FILENAME>
+gio trash '<FILENAME>'
 
 # empty the trash
 gio trash --empty
@@ -23,26 +23,38 @@ gio trash --empty
 
 ## Install a .deb
 ```bash
-dpkg -i <PATH_TO_DEB_FILE>
+dpkg -i '<PATH_TO_DEB_FILE>'
 apt-get install -f
 ```
 
 ## PPA
 ```bash
 # Add a PPA
-add-apt-repository ppa:<PPA_NAME>
+add-apt-repository 'ppa:<PPA_NAME>'
 apt-get update
-apt-get install <PACKAGE_TO_INSTALL>
+apt-get install '<PACKAGE_TO_INSTALL>'
 
 # Remove a PPA
-apt-add-repository --remove ppa:<PPA_NAME>
+apt-add-repository --remove 'ppa:<PPA_NAME>'
 apt-get update
 ```
 
 ## mdadm
 ```bash
+# show all raid statuses
+cat /proc/mdstat
+
 # Check array status
-mdadm -D /dev/<NAME_OF_ARRAY>
+mdadm -D '/dev/<NAME_OF_ARRAY>'
+
+# Remove/Delete raid array
+sudo umount -l '/dev/<NAME_OF_ARRAY>' # lazily unmount
+sudo mdadm --stop '/dev/<NAME_OF_ARRAY>'
+sudo mdadm --zero-superblock '/dev/<ID_OF_EACH_HDD>'
+sudo mdadm --remove '/dev/<NAME_OF_ARRAY>'
+sudo wipefs -a '/dev/<ID_OF_EACH_HDD>' # stop kernel from re-adding
+
+# don't forget to remove any entries in /etc/fstab if applicable
 ```
 
 ## Ubuntu Version

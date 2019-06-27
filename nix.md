@@ -190,7 +190,7 @@ whois example.com
 xxd -b '<THE_FILE>' | less
 ```
 
-## yotuube-dl
+## yotube-dl
 ```bash
 # Download embed-only vimeo videos
 youtube-dl '<LINK_TO_VIDEO>' --referer '<LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>'
