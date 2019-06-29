@@ -1,5 +1,3 @@
-# Useful Ubuntu Commands
-
 ## Trash
 ### < 18.04
 ```bash
@@ -90,6 +88,23 @@ sudo smartctl -l selftest '/dev/<DEVICE_ID>'
 # view detailed smart information for a SATA drive
 sudo smartctl -a -d ata '/dev/<DEVICE_ID>'
 ```
+
+## zfs
+```bash
+# create raidz1 pool
+sudo zpool create '<SOME_NAME_HERE>' raidz '/dev/<DEVICE_ID1>' '/dev/<DEVICE_ID2>' '/dev/<DEVICE_ID3>'
+
+# check zpool statues
+zpool status
+
+# move zpool mount location
+sudo zfs set mountpoint='<PATH_TO_NEW_MOUNT_POINT>' '<NAME_OF_ZPOOL>'
+
+# destroy a zpool
+sudo zpool destroy '<NAME_OF_ZPOOL>'
+sudo wipefs -a '/dev/<ID_OF_EACH_HDD>' # stop kernel from re-adding
+```
+
 
 ## Useful Programs
 ```bash
