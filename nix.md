@@ -53,12 +53,30 @@ git fetch --all && git reset --hard origin/master
 
 ## don't use your system keychain for this repository
 git config --local credential.helper ""
+
+## Have git prompt for your new password next push
+git config --global --unset user.password
 ```
 
 ## grep
 ```bash
 # recursive grep for text in files 
 grep -rnw '<ROOT_DIRECTORY_TO_SEARCH>' -e '<PATTERN>'
+```
+
+## groups and users
+```bash
+# list current user's groups
+groups
+
+# list another user's groups
+groups '<USERNAME>'
+
+# Add existing user to new group
+sudo usermod -a -G '<GROUP_TO_ADD>' '<USERNAME>'
+
+# list users on a system
+compgen -u
 ```
 
 ## imagemagick
@@ -121,12 +139,18 @@ screen -ls
 screen -r '<PID>' # pid comes from doing screen -ls
 ```
 
-## smb
+## samba
 ```bash
-# create SMB user or change the password of an existing user
-smbpasswd -a USERNAME_TO_CREATE_OR_CHANGE
+# create or change password of samba user
+smbpasswd -a '<USERNAME_TO_CREATE_OR_CHANGE>'
 
-# Various ways to get status/information about sambad:
+# enable the account of an existing samba user
+sudo smbpasswd -e'<USERNAME_TO_CREATE_OR_CHANGE>'
+
+# create a system user for use with samba
+sudo adduser --no-create-home --shell /usr/sbin/nologin --disabled-password --disabled-login --ingroup sambashare '<USERNAME>'
+
+# Various ways to get status/information about smbd:
 smbstatus
 pdbedit -L -v
 net usershare info --long

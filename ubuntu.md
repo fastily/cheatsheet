@@ -103,6 +103,9 @@ sudo zfs set mountpoint='<PATH_TO_NEW_MOUNT_POINT>' '<NAME_OF_ZPOOL>'
 # destroy a zpool
 sudo zpool destroy '<NAME_OF_ZPOOL>'
 sudo wipefs -a '/dev/<ID_OF_EACH_HDD>' # stop kernel from re-adding
+
+# import zpool
+sudo zpool import '<NAME_OF_ZPOOL>'
 ```
 
 
