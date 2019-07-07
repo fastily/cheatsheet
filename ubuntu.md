@@ -85,8 +85,11 @@ sudo smartctl -t short '/dev/<DEVICE_ID>'
 # view drive's test stats
 sudo smartctl -l selftest '/dev/<DEVICE_ID>'
 
-# view detailed smart information for a SATA drive
+# view detailed smart information for a disk
 sudo smartctl -a -d ata '/dev/<DEVICE_ID>'
+
+# get lots of information about a disk
+sudo smartctl -x '/dev/<DEVICE_ID>'
 ```
 
 ## zfs
