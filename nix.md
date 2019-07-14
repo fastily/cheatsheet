@@ -169,6 +169,33 @@ sox '<INPUT_FILE>' -n spectrogram -o out.png
 ssh-keygen -t rsa -b 8192 -C '<DESCRIPTION>'
 ```
 
+## systemctl/systemd
+```bash
+# get status of a service
+systemctl status '<SERVICE_NAME>'
+
+# enable service at boot
+systemctl enable '<SERVICE_NAME>'
+
+# list all known services
+systemctl list-units --all
+
+# list all known unit files
+systemctl list-unit-files
+
+# display a unit file
+systemctl cat '<SERVICE_NAME>'
+
+# display service's dependencies
+systemctl list-dependencies '<SERVICE_NAME>'
+
+# mark a service as unstartable by nobody
+systemctl mask '<SERVICE_NAME>'
+
+# unmask a service and return it to its previous state
+systemctl unmask '<SERVICE_NAME>'
+```
+
 ## tar
 ```bash
 # Extract a .tar.gz archive

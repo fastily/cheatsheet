@@ -126,3 +126,12 @@ sudo apt -y install kazam
 # zfs
 sudo apt -y install zfsutils-linux
 ```
+
+## sed
+```bash
+# grab all lines in a file matching REGEX_LINE_TO_MATCH and for each line replace TEXT_TO_REPLACE_REGEX w/ REPLACEMENT_TEXT
+sudo sed -i -e '/<REGEX_LINE_TO_MATCH>/s/<TEXT_TO_REPLACE_REGEX>/<REPLACEMENT_TEXT>/' '<FILE_TO_EDIT>'
+
+# enables extended regex: capturing groups '(foo)' and quantifiers '?'
+sudo sed -i -E 's/<REGEX_TEXT_TO_REPLACE>/<REPLACEMENT_TEXT>/'
+```

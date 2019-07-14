@@ -61,3 +61,9 @@ ${arr[@]/%/Foo}
 # Get cli args but only from the 2nd element and onwards
 "${@:2}"
 ```
+
+
+## slurp file into variable
+```bash
+myVariable=$(<'<FILE_TO_SLURP>')
+```
