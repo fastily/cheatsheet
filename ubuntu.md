@@ -135,3 +135,9 @@ sudo sed -i -e '/<REGEX_LINE_TO_MATCH>/s/<TEXT_TO_REPLACE_REGEX>/<REPLACEMENT_TE
 # enables extended regex: capturing groups '(foo)' and quantifiers '?'
 sudo sed -i -E 's/<REGEX_TEXT_TO_REPLACE>/<REPLACEMENT_TEXT>/'
 ```
+
+## hostnamectl
+```bash
+# change this computer's (static, pretty, transient) hostname
+hostnamectl set-hostname '<NEW_HOSTNAME>'
+```
