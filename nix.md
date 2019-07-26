@@ -121,6 +121,36 @@ nmap -sP 10.0.1.0/24
 php -S localhost:8080 -t public_html/
 ```
 
+
+## rsync
+```bash
+# archive, show progress, delete files on dest.  Note trailing slash on SOURCE_FOLDER
+rsync -avh --progress --delete "<SOURCE_FOLDER>/" "<DEST_FOLDER>"
+
+# archive, use ssh to copy to dest on server
+rsync -avh "<SOURCE_FOLDER>/" "user@myserver.com:<DEST_FOLDER>"
+```
+
+#### notes
+`-a` stands for "archive mode", implies:
+* `-r`: recursive
+* `-l`: copy symlinks as symlinks
+* `-p`: preserve permissions
+* `-t`: preserve times
+* `-g`: preserve group
+* `-o`: preserve owner (super-user only)
+* `-D`: preserve device files and special files
+
+other interesting args:
+* `-v` - verbose
+* `-h` - human readable
+* `-P` - show progress bar and keep partially copied files
+* `-n` - dry run
+* `--delete` - delete files on dest whihc are not in source 
+* `-u` - skip files that are newer on destination
+
+
+
 ## screen
 ```bash
 # Start a new screen
