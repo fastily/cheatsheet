@@ -88,6 +88,12 @@ convert '<INPUT_FILE>' -fuzz 20% -transparent white out.png
 convert -dispose none -loop 0 -delay 100 *.JPG -resize 20% out.gif
 ```
 
+## lsof
+```bash
+# Quickly (-n) list all open sockets by port (-P) on local device
+lsof -Pn -i4
+```
+
 ## nginx
 ```bash
 # restart an nginx service
@@ -121,6 +127,11 @@ nmap -sP 10.0.1.0/24
 php -S localhost:8080 -t public_html/
 ```
 
+## ps
+```bash
+# get process name if you have its pid
+ps -p '<PID>' -o comm=
+```
 
 ## rsync
 ```bash
@@ -146,7 +157,7 @@ other interesting args:
 * `-h` - human readable
 * `-P` - show progress bar and keep partially copied files
 * `-n` - dry run
-* `--delete` - delete files on dest whihc are not in source 
+* `--delete` - delete files on dest which are not in source 
 * `-u` - skip files that are newer on destination
 
 
