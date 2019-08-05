@@ -109,6 +109,12 @@ sudo wipefs -a '/dev/<ID_OF_EACH_HDD>' # stop kernel from re-adding
 
 # import zpool
 sudo zpool import '<NAME_OF_ZPOOL>'
+
+# create snapshot.  nb: datasets cannot be destroyed if snapshots of it exist.
+sudo zfs snapshot '<FILESYSTEM_NAME>@<SNAPSHOT_NAME>'
+
+# list snapshots
+zfs list -t snapshot
 ```
 
 
