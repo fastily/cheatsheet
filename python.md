@@ -39,3 +39,24 @@ pip install --upgrade '<PACKAGE_NAME>'
 # list outdated packages
 pip list --outdated
 ```
+
+## virtualenv
+```bash
+# create new venv
+mkdir -p '<FOLDER_TO_USE>' && virtualenv '<FOLDER_TO_USE>'
+
+# activate virtualenv (from outside virtualenv)
+source '<FOLDER_WITH_VIRTUALENV>/bin/activate'
+
+# exit virtualenv (from within the virtualenv) 
+deactivate
+```
+
+## twine
+```bash
+# generate distribution files (from within project's root folder)
+python setup.py sdist bdist_wheel
+
+# upload generated distribution files to pypi
+twine upload '<DIST_FOLDER_WITH_GENERATED_PACKAGES>'/*
+```
