@@ -107,6 +107,9 @@ sudo zfs set mountpoint='<PATH_TO_NEW_MOUNT_POINT>' '<NAME_OF_ZPOOL>'
 sudo zpool destroy '<NAME_OF_ZPOOL>'
 sudo wipefs -a '/dev/<ID_OF_EACH_HDD>' # stop kernel from re-adding
 
+# list zpools which can be imported
+sudo zpool import
+
 # import zpool
 sudo zpool import '<NAME_OF_ZPOOL>'
 
@@ -115,6 +118,12 @@ sudo zfs snapshot '<FILESYSTEM_NAME>@<SNAPSHOT_NAME>'
 
 # list snapshots
 zfs list -t snapshot
+
+# initiate a scrub
+zpool scrub '<NAME_OF_POOL>'
+
+# kill a running scrub
+zpool scrub -s '<NAME_OF_POOL>'
 ```
 
 
