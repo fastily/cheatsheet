@@ -1,20 +1,26 @@
 ## User Management
 ```SQL
-# display users
+-- display users
 \du
 
-# change user password
-\password <USER_NAME>
+-- change user password
+\password 'USER_NAME'
 ```
 
 ## Database Management
 ```SQL
-# create DB
-CREAETE DATABASE <DB_NAME>;
+-- create DB
+CREATE DATABASE db_name;
+
+-- drop database
+DROP DATABASE db_name;
+
+-- create user with password
+CREATE USER some_username WITH PASSWORD 'password';
 ```
 
 ## Navigation
 ```SQL
-# quit CLI
+-- quit CLI
 \q
 ```
