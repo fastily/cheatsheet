@@ -131,6 +131,9 @@ php -S localhost:8080 -t public_html/
 ```bash
 # get process name if you have its pid
 ps -p '<PID>' -o comm=
+
+# get detailed information about process with PID
+ps -Flw -p '<THE_PID>'
 ```
 
 ## rsync
