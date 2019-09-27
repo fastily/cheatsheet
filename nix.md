@@ -189,7 +189,7 @@ screen -r '<PID>' # pid comes from doing screen -ls
 smbpasswd -a '<USERNAME_TO_CREATE_OR_CHANGE>'
 
 # enable the account of an existing samba user
-sudo smbpasswd -e'<USERNAME_TO_CREATE_OR_CHANGE>'
+sudo smbpasswd -e '<USERNAME_TO_CREATE_OR_CHANGE>'
 
 # create a system user for use with samba
 sudo adduser --no-create-home --shell /usr/sbin/nologin --disabled-password --disabled-login --ingroup sambashare '<USERNAME>'
