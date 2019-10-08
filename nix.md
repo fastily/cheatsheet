@@ -86,6 +86,9 @@ convert '<INPUT_FILE>' -fuzz 20% -transparent white out.png
 
 # Make a GIF from JPG files in a directory
 convert -dispose none -loop 0 -delay 100 *.JPG -resize 20% out.gif
+
+# Create a favicon from a square png
+convert '<SOURCE_PNG_FILE>' -define icon:auto-resize=128,96,64,48,32,16 favicon.ico
 ```
 
 ## lsof
