@@ -1,3 +1,9 @@
+## adduser
+```bash
+# add a new user interactively
+sudo adduser '<NEW_USERNAME>'
+```
+
 ## dd
 ```bash
 # Write ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
