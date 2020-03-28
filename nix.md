@@ -103,6 +103,12 @@ convert '<SOURCE_PNG_FILE>' -define icon:auto-resize=128,96,64,48,32,16 favicon.
 lsof -Pn -i4
 ```
 
+## ln
+```bash
+# create symlink.  Omit trailing slashes
+ln -s '<DIRECTORY_TO_LINK_TO>' '<NEW_SYM_LINK_NAME>'
+```
+
 ## nginx
 ```bash
 # restart an nginx service
