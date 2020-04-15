@@ -45,6 +45,9 @@ git rm --cached '<PATH_TO_FILE>'
 # squash the last 3 commits
 git reset --soft HEAD~3 && git commit -m '<NEW_MESSAGE>' && git push -f
 
+# delete the most recent commit and rollback changes to the previous commit
+git reset --hard HEAD~1
+
 ## add upstream to a GitHub fork
 git remote add upstream 'https://github.com/<ORIGINAL_OWNER>/<ORIGINAL_REPOSITORY>.git'
 
@@ -62,6 +65,21 @@ git config --local credential.helper ""
 
 ## Have git prompt for your new password next push
 git config --global --unset user.password
+```
+
+## gpg
+```bash
+# generate a key
+gpg --full-generate-key
+
+# list keys for which I have both the public and private keys
+gpg --list-secret-keys --keyid-format LONG
+
+# Print GPG public key in ASCII armor format
+gpg --armor --export "<GPG_KEY_ID>"
+
+# Publish a public key (using Ubuntu's keyservers)
+gpg --keyserver keyserver.ubuntu.com --send-keys "<GPG_KEY_ID>"
 ```
 
 ## grep
