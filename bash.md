@@ -17,6 +17,7 @@ join_by() {
 # example
 join_by , a "b c" d #a,b c,d
 ```
+
 ## ! commands
 ```bash
 # re-run last command
@@ -32,7 +33,6 @@ join_by , a "b c" d #a,b c,d
 !*
 ```
 
-
 ## Job Control
 ```bash
 # list all jobs
@@ -45,7 +45,6 @@ fg %N # where N is the job number obtained from jobs
 bg %N # where N is the job number obtained from jobs
 ```
 
-
 ## Arrays
 ```bash
 # Prepend Foo to every array element
@@ -55,15 +54,22 @@ ${arr[@]/#/Foo}
 ${arr[@]/%/Foo}
 ```
 
-
 ## Special Variables
 ```bash
 # Get cli args but only from the 2nd element and onwards
 "${@:2}"
 ```
 
-
 ## slurp file into variable
 ```bash
 myVariable=$(<'<FILE_TO_SLURP>')
+```
+
+## append string to files (before the extension)
+```bash
+# ${f%.*} - all chars before ext
+# ${f##*.} - all chars after ext (dot not incl)
+for f in *; do
+	mv -v "$f" "${f%.*}<TEXT_TO_APPEND>.${f##*.}"
+done
 ```
