@@ -14,6 +14,13 @@ ffmpeg -i '<INPUT_FILE>' -vn -c:a libvorbis -q:a 10 out.oga
 
 # Convert every flac file in the current directory to mp3
 for f in *.flac; do ffmpeg -i  "$f" -vn -c:a libmp3lame -b:a 320k "${f%.flac}.mp3"; done;
+
+# increase audio by 150%
+ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=1.5" '<OUTPUT_FILE>'
+
+# increase audio by 10dB
+ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=10dB" '<OUTPUT_FILE>'
+
 ```
 
 
@@ -27,6 +34,9 @@ ffmpeg -i '<INPUT_FILE>' -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -c:a
 
 # Convert every MOV file in the current directory to audioless webm
 for f in *.MOV; do ffmpeg -i "$f" -an -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
+
+# convert a video to gif with okay quality
+ffmpeg -i '<INPUT_FILE>' -r 15 -vf "scale=512:-1,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" '<OUTPUT_FILE>'
 ```
 
 
@@ -77,3 +87,9 @@ ffmpeg -i "concat:FILE1.ts|FILE2.ts|FILE3.ts" -c copy -bsf:a aac_adtstoasc '<OUT
 ```
 
 * [Concat Guide](https://trac.ffmpeg.org/wiki/Concatenate#protocol)
+
+## loop a video and/or audio file
+```bash
+# loop a a/v file 5 times and dump the result into the output
+ffmpeg -stream_loop 5 -i '<INPUT_FILE>' -c copy '<OUTPUT_FILE>'
+```
