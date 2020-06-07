@@ -71,6 +71,15 @@ lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
 
 ```
 
+## lsusb
+```bash
+# list all usb device ids (vendor:product id)
+lsusb
+
+# dump usb heierarchy as a tree
+lsusb -t
+```
+
 ## smart
 ```bash
 # enable smart on a drive
@@ -90,6 +99,10 @@ sudo smartctl -a -d ata '/dev/<DEVICE_ID>'
 
 # get lots of information about a disk
 sudo smartctl -x '/dev/<DEVICE_ID>'
+
+# temporarily set usb quirks flag for a device - use UAS, but still allow smartctl (reset on reboot)
+cat "/sys/module/usb_storage/parameters/quirks" # verify empty first
+printf "<VENDOR_ID>":"<PRODUCT_ID>":"u\n" | sudo tee "/sys/module/usb_storage/parameters/quirks" # plug in device and try again
 ```
 
 ## zfs
@@ -156,3 +169,4 @@ sudo sed -i -E 's/<REGEX_TEXT_TO_REPLACE>/<REPLACEMENT_TEXT>/'
 # change this computer's (static, pretty, transient) hostname
 hostnamectl set-hostname '<NEW_HOSTNAME>'
 ```
+
