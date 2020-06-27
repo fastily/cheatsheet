@@ -24,6 +24,12 @@ dig example.com MX
 eyeD3 -A '<ALBUM_NAME>' -b '<ALBUM_NAME>' --add-image '<PATH_TO_FILE>':FRONT_COVER '<INPUT_MP3>'
 ```
 
+## exiftool
+```bash
+# delete all GPS and XMP metadata from a media file
+exiftool -gps:all= -xmp-exif:all= '<FILES_TO_PROCESS>'
+```
+
 ## find
 ```bash
 # find all files in a directory older than 10 days and delete them
