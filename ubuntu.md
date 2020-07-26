@@ -170,3 +170,8 @@ sudo sed -i -E 's/<REGEX_TEXT_TO_REPLACE>/<REPLACEMENT_TEXT>/'
 hostnamectl set-hostname '<NEW_HOSTNAME>'
 ```
 
+## udisksctrl
+```bash
+# power off an external hard drive (do this after unmounting)
+sudo udisksctrl power-off -b '/dev/<DEVICE_ID>'
+```
