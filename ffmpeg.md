@@ -43,7 +43,7 @@ ffmpeg -i '<INPUT_FILE>' -r 15 -vf "scale=512:-1,split[s0][s1];[s0]palettegen[p]
 ## Trim audio/video
 ```bash
 # Trim audio/video (ex: start at 5 sec and go until 2 min)
-ffmpeg -i '<INPUT_FILE>' -c:a copy -c:v copy -ss 5 -t 120 out.<EXT>
+ffmpeg -i '<INPUT_FILE>' -c:a copy -c:v copy -ss 5 -to 120 '<OUTPUT_FILE>'
 ```
 
 
