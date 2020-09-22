@@ -29,3 +29,8 @@ softwareupdate -l
 # Install an update
 softwareupdate -i <FULL_NAME_OF_UPDATE>
 ```
+
+## Show information about a volume
+```bash
+diskutil info '<PATH_TO_VOLUME>'
+```
