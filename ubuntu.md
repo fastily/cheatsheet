@@ -94,8 +94,11 @@ sudo smartctl -t short '/dev/<DEVICE_ID>'
 # view drive's test stats
 sudo smartctl -l selftest '/dev/<DEVICE_ID>'
 
-# view detailed smart information for a disk
+# view detailed smart information for a disk (ATA disks)
 sudo smartctl -a -d ata '/dev/<DEVICE_ID>'
+
+# view detailed smart information for a disk (SCSI to ATA, typically for external USB hdd's)
+sudo smartctl -a -d sat '/dev/<DEVICE_ID>'
 
 # get lots of information about a disk
 sudo smartctl -x '/dev/<DEVICE_ID>'
@@ -170,8 +173,8 @@ sudo sed -i -E 's/<REGEX_TEXT_TO_REPLACE>/<REPLACEMENT_TEXT>/'
 hostnamectl set-hostname '<NEW_HOSTNAME>'
 ```
 
-## udisksctrl
+## udisksctl
 ```bash
 # power off an external hard drive (do this after unmounting)
-sudo udisksctrl power-off -b '/dev/<DEVICE_ID>'
+sudo udisksctl power-off -b '/dev/<DEVICE_ID>'
 ```
