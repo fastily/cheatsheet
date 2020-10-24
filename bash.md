@@ -73,3 +73,8 @@ for f in *; do
 	mv -v "$f" "${f%.*}<TEXT_TO_APPEND>.${f##*.}"
 done
 ```
+
+## debug
+```bash
+bash -x "<COMMAND_TO_RUN>"
+```
