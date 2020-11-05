@@ -113,6 +113,9 @@ printf "<VENDOR_ID>":"<PRODUCT_ID>":"u\n" | sudo tee "/sys/module/usb_storage/pa
 # create raidz1 pool
 sudo zpool create '<SOME_NAME_HERE>' raidz '/dev/<DEVICE_ID1>' '/dev/<DEVICE_ID2>' '/dev/<DEVICE_ID3>'
 
+# create raid0 pool
+sudo zpool create '<SOME_NAME_HERE>' '/dev/<DEVICE_ID1>' '/dev/<DEVICE_ID2>' '/dev/<DEVICE_ID3>'
+
 # check zpool statues
 zpool status
 
