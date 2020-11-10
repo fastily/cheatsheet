@@ -205,7 +205,11 @@ other interesting args:
 * `--delete` - delete files on dest which are not in source 
 * `-u` - skip files that are newer on destination
 
-
+## pgrep
+```bash
+# compare against entire process name (why isn't this the default?!)
+pgrep -f '<PATTERN>'
+```
 
 ## screen
 ```bash
