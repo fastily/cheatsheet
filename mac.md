@@ -37,7 +37,7 @@ diskutil info '<PATH_TO_VOLUME>'
 
 ## Get summed lengths of videos in folders of current dir
 ```bash
-for d in */ ; do 
+for d in */ ; do
 	mdls "$d"/*.mov | grep Duration | awk '{ print $3 }' | paste -s -d+ - | bc
 done
 ```
