@@ -140,4 +140,4 @@ Push these keys to display the bios menu or boot into the bios.
 | EVGA | F7 | DEL |
 
 
-<small>Source: https://kb.wisc.edu/page.php?id=58779</small>
+Source: https://kb.wisc.edu/page.php?id=58779
