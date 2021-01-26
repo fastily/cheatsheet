@@ -19,14 +19,12 @@ gio trash '<FILENAME>'
 gio trash --empty
 ```
 
-## Install a .deb
+## apt and dpkg
 ```bash
+# Install a .deb
 dpkg -i '<PATH_TO_DEB_FILE>'
 apt-get install -f
-```
 
-## PPA
-```bash
 # Add a PPA
 add-apt-repository 'ppa:<PPA_NAME>'
 apt-get update
@@ -35,6 +33,12 @@ apt-get install '<PACKAGE_TO_INSTALL>'
 # Remove a PPA
 apt-add-repository --remove 'ppa:<PPA_NAME>'
 apt-get update
+
+# Remove package
+apt-get remove '<PACKAGE_NAME>'
+
+# Remove package and delete all of its config files
+apt-get purge '<PACKAGE_NAME>'
 ```
 
 ## mdadm
