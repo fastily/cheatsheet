@@ -41,3 +41,12 @@ for d in */ ; do
 	mdls "$d"/*.mov | grep Duration | awk '{ print $3 }' | paste -s -d+ - | bc
 done
 ```
+
+## Show hardware information
+```bash
+# general hardware information
+system_profiler SPHardwareDataType
+
+# get name of CPU
+sysctl -n machdep.cpu.brand_string
+```
