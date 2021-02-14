@@ -122,6 +122,9 @@ convert -dispose none -loop 0 -delay 100 *.JPG -resize 20% out.gif
 
 # Create a favicon from a square png
 convert '<SOURCE_PNG_FILE>' -define icon:auto-resize=128,96,64,48,32,16 favicon.ico
+
+# Convert a pdf to png (high resolution)
+convert -density 288 '<INPUT_PDF>' '<OUTPUT_PNG>'
 ```
 
 ## lsof
