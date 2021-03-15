@@ -287,6 +287,9 @@ systemctl mask '<SERVICE_NAME>'
 
 # unmask a service and return it to its previous state
 systemctl unmask '<SERVICE_NAME>'
+
+# reload unit files after editing them
+systemctl daemon-reload
 ```
 
 ## tar
