@@ -127,6 +127,16 @@ convert '<SOURCE_PNG_FILE>' -define icon:auto-resize=128,96,64,48,32,16 favicon.
 convert -density 288 '<INPUT_PDF>' '<OUTPUT_PNG>'
 ```
 
+## iperf3
+```bash
+# Start iperf3 server
+iperf3 -s
+
+# connect to server with iperf3 client
+iperf3 -c '<SERVER_IP>'
+```
+
+
 ## lsof
 ```bash
 # Quickly (-n) list all open sockets by port (-P) on local device
