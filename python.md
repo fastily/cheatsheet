@@ -55,7 +55,7 @@ deactivate
 ## twine
 ```bash
 # generate distribution files (from within project's root folder)
-python setup.py sdist bdist_wheel
+python -m build # requires build package - pip install build
 
 # upload generated distribution files to pypi
 twine upload '<DIST_FOLDER_WITH_GENERATED_PACKAGES>'/*
