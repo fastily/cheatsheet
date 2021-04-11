@@ -50,3 +50,8 @@ system_profiler SPHardwareDataType
 # get name of CPU
 sysctl -n machdep.cpu.brand_string
 ```
+
+## Uninstall Xcode CLI tools
+```bash
+sudo rm -rf "/Library/Developer/CommandLineTools"
+```
