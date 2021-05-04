@@ -2,6 +2,9 @@
 ```bash
 # add a new user interactively
 sudo adduser '<NEW_USERNAME>'
+
+# add a new service account interactively
+sudo adduser --disabled-password '<NEW_USERNAME>'
 ```
 
 ## dd
