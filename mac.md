@@ -47,8 +47,11 @@ done
 # general hardware information
 system_profiler SPHardwareDataType
 
-# get name of CPU
+# show name of CPU
 sysctl -n machdep.cpu.brand_string
+
+# show arch
+uname -m
 ```
 
 ## Uninstall Xcode CLI tools
