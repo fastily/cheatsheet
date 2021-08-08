@@ -15,10 +15,10 @@ find . -name '*.DS_Store' -type f -delete
 ## Make password-protected, encypted zips
 ```bash
 # Encypt and zip two files
-zip -e <ARCHIVE>.zip input1.txt input2.txt
+zip -e '<ARCHIVE>.zip' 'input1.txt' 'input2.txt'
 
 # Encypt and zip a directory
-zip -er <ARCHIVE>.zip <PATH_TO_DIRECTORY>
+zip -er '<ARCHIVE>.zip' '<PATH_TO_DIRECTORY>'
 ```
 
 ## Software Update via Terminal
@@ -27,7 +27,10 @@ zip -er <ARCHIVE>.zip <PATH_TO_DIRECTORY>
 softwareupdate -l
 
 # Install an update
-softwareupdate -i <FULL_NAME_OF_UPDATE>
+softwareupdate -i '<FULL_NAME_OF_UPDATE>'
+
+# Install all available updates
+softwareupdate -ai
 ```
 
 ## Show information about a volume
@@ -60,10 +63,15 @@ sudo rm -rf "/Library/Developer/CommandLineTools"
 ```
 
 ## WiFi info
-````bash
+```bash
 # Show Available WiFi Networks
 /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
 
 # Get information about current WiFi connection
 /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
+```
+
+## Change Wallpaper
+```bash
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "<ABSOLUTE_PATH_TO_JPG>"'
 ```
