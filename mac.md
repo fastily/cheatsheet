@@ -68,10 +68,19 @@ sudo rm -rf "/Library/Developer/CommandLineTools"
 /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
 
 # Get information about current WiFi connection
-/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
+/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
 ```
 
 ## Change Wallpaper
 ```bash
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "<ABSOLUTE_PATH_TO_JPG>"'
+```
+
+## Gatekeeper
+```bash
+# enable
+sudo spctl --master-enable
+
+# disable
+sudo spctl --master-disable
 ```
