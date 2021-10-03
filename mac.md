@@ -1,10 +1,10 @@
 ## Hide a file/folder
 ```bash
 # Hide
-chflags hidden <FILE_NAME>
+chflags hidden '<FILE_NAME>'
 
 # Show
-chflags nohidden <FILE_NAME>
+chflags nohidden '<FILE_NAME>'
 ```
 
 ## Recursively delete .DS_STORE
@@ -57,7 +57,7 @@ sysctl -n machdep.cpu.brand_string
 uname -m
 ```
 
-## Uninstall Xcode CLI tools
+## Uninstall Xcode CLT
 ```bash
 sudo rm -rf "/Library/Developer/CommandLineTools"
 ```

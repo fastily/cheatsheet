@@ -78,3 +78,8 @@ done
 ```bash
 bash -x "<COMMAND_TO_RUN>"
 ```
+
+## truncate file
+```bash
+> '<PATH_TO_FILE>'
+```
