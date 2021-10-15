@@ -77,6 +77,9 @@ git config --global --unset user.password
 
 ## sync a branch with master
 git checkout master && git pull && git checkout '<BRANCH_TO_SYNC>' && git merge master
+
+## cherry pick a commit
+git cherry-pick -x '<COMMIT_SHA>'
 ```
 
 ## gpg
