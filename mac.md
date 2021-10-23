@@ -84,3 +84,9 @@ sudo spctl --master-enable
 # disable
 sudo spctl --master-disable
 ```
+
+## Reset local account password
+````bash
+# Recovery mode -> Terminal.  Can't be locked with Apple ID.
+resetpassword
+```
