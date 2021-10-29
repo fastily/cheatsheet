@@ -197,6 +197,12 @@ ps -p '<PID>' -o comm=
 ps -Flw -p '<THE_PID>'
 ```
 
+## rdfind
+```bash
+# Recursively delete duplicate files in a directory
+rdfind -deleteduplicates true '<PATH_TO_DIRECTORY>'
+```
+
 ## rsync
 ```bash
 # archive, show progress, delete files on dest.  Note trailing slash on SOURCE_FOLDER

@@ -1,5 +1,8 @@
 ## django
 ```bash
+# install dependencies
+pip3 install Django pylint pylint-django
+
 # create new project
 django-admin startproject '<PROJECT_NAME>'
 
