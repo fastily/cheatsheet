@@ -83,6 +83,9 @@ sudo spctl --master-enable
 
 # disable
 sudo spctl --master-disable
+
+# ad-hoc sign a binary (i.e. disable signature check for specific app)
+sudo codesign -f -s '<PATH_TO_APP>/Contents/MacOS/<APP_BINARY>'
 ```
 
 ## Reset local account password
