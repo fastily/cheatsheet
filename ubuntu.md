@@ -1,22 +1,13 @@
-## Trash
-### < 18.04
+## trash-cli
 ```bash
 # Move a file or directory to the trash
-gvfs-trash '<FILENAME>'
+trash-put '<FILENAME>'
 
-# See contents of trash
-gvfs-ls trash://
+# View contents of trash
+trash-list
 
 # Empty the Trash
-gvfs-trash --empty
-```
-### >= 18.04
-```bash
-# move file/directory to trash
-gio trash '<FILENAME>'
-
-# empty the trash
-gio trash --empty
+trash-empty
 ```
 
 ## apt and dpkg
@@ -160,6 +151,9 @@ sudo apt -y install gparted
 
 # screen recorder
 sudo apt -y install kazam
+
+# trash management cli that actually works
+sudo apt -y install trash-cli
 
 # zfs
 sudo apt -y install zfsutils-linux
