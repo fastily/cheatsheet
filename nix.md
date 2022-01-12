@@ -87,6 +87,9 @@ git cherry-pick -x '<COMMIT_SHA>'
 # generate a key
 gpg --full-generate-key
 
+# list keys and show short IDs (used by gradle)
+gpg --list-keys --keyid-format SHORT
+
 # list keys for which I have both the public and private keys
 gpg --list-secret-keys --keyid-format LONG
 
@@ -95,6 +98,9 @@ gpg --armor --export "<GPG_KEY_ID>"
 
 # Publish a public key (using Ubuntu's keyservers)
 gpg --keyserver keyserver.ubuntu.com --send-keys "<GPG_KEY_ID>"
+
+# Force gpg to output a secring.gpg file in the current directory
+gpg --export-secret-keys -o secring.gpg
 ```
 
 ## grep
