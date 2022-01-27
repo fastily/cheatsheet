@@ -26,6 +26,9 @@ ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=10dB" '<OUTPUT_FILE>'
 
 ## Transcode Video
 ```bash
+# Convert a video to mov (x265) with okay quality
+ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -c:a aac -vbr 3 -tag:v hvc1 out.mov
+
 # Convert video to ogv
 ffmpeg -i '<INPUT_FILE>' -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
 
@@ -76,6 +79,11 @@ ffmpeg -i '<INPUT_FILE>' -an -r 30 -vf "setpts=8*PTS" -c:v libtheora -q:v 10 out
 
 # Convert every MOV file in the current directory to audioless webm, slowed down 8x
 for f in *.MOV; do ffmpeg -i "$f" -an -r 30 -vf "setpts=8*PTS" -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
+```
+
+### Deinterlace
+```bash
+ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -vf yadif -an -tag:v hvc1 out.mov
 ```
 
 
