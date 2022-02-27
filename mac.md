@@ -57,9 +57,13 @@ sysctl -n machdep.cpu.brand_string
 uname -m
 ```
 
-## Uninstall Xcode CLT
+## Xcode
 ```bash
+# Uninstall Xcode CLT
 sudo rm -rf "/Library/Developer/CommandLineTools"
+
+# Get version of Swift that Xcode is using
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift --version
 ```
 
 ## WiFi info
