@@ -13,6 +13,12 @@ sudo adduser --disabled-password '<NEW_USERNAME>'
 sudo dd bs=4M if='<PATH_TO_ISO>' of='<PATH_TO_USB_BLOCK_DEVICE>' && sync
 ```
 
+## diff
+```bash
+# recursively compare two directories and list differences
+diff -rq directory1/ directory2/
+```
+
 ## dig
 ```bash
 # get everything
