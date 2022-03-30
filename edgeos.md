@@ -14,9 +14,11 @@ exit
 # Disable password-based auth
 set service ssh disable-password-authentication
 
-# Install Public Key
-# Copy public key to the router (e.g. in /tmp/blah.pub), then do:
+# Install Public Key.  Copy public key to the router (e.g. in /tmp/blah.pub), then do:
 loadkey '<USERNAME>' '<PATH_TO_PUBLIC_KEY>'
+
+# Delete public key
+delete system login user "<USERNAME>" authentication public-keys '<PUBLIC_KEY_NAME>'
 ```
 
 ## show
@@ -29,6 +31,9 @@ show interfaces
 
 # show storage
 show system storage
+
+# list ssh keys
+show configuration commands | egrep public-keys
 ```
 
 ## upgrade

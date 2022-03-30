@@ -38,6 +38,12 @@ softwareupdate -ai
 diskutil info '<PATH_TO_VOLUME>'
 ```
 
+## SMB
+```bash
+# List information about all SMB shares we're currently connected to
+smbutil statshares -a
+```
+
 ## Get summed lengths of videos in folders of current dir
 ```bash
 for d in */ ; do

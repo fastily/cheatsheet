@@ -290,10 +290,22 @@ smbtree
 sox '<INPUT_FILE>' -n spectrogram -o out.png
 ```
 
-## ssh-keygen
+## ssh
 ```bash
-# Generate a new rsa private/public key pair.
-ssh-keygen -t rsa -b 8192 -C '<DESCRIPTION>'
+# List supported key types on a client
+ssh -Q key
+
+# Probe a server about its supported ssh algorithims
+nmap --script ssh2-enum-algos -sV -Pn -p 22 '<HOSTNAME_OR_IP>'
+
+# Get info about an existing ssh key (either pub or priv key)
+ssh-keygen -l -f '<PATH_TO_FILE>'
+
+# Generate a new ed25519 priv/pub pair (best practice)
+ssh-keygen -t ed25519 -C '<DESCRIPTION>'
+
+# Generate a new rsa priv/pub pair (legacy systems)
+ssh-keygen -t rsa -b 4096 -C '<DESCRIPTION>'
 ```
 
 ## systemctl/systemd
