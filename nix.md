@@ -301,6 +301,9 @@ nmap --script ssh2-enum-algos -sV -Pn -p 22 '<HOSTNAME_OR_IP>'
 # Get info about an existing ssh key (either pub or priv key)
 ssh-keygen -l -f '<PATH_TO_FILE>'
 
+# Remove an entry from known_hosts
+ssh-keygen -R '<HOSTNAME_OR_IP>'
+
 # Generate a new ed25519 priv/pub pair (best practice)
 ssh-keygen -t ed25519 -C '<DESCRIPTION>'
 
