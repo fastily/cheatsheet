@@ -63,29 +63,34 @@ git reset --soft HEAD~3 && git commit -m '<NEW_MESSAGE>' && git push -f
 # delete the most recent commit and rollback changes to the previous commit
 git reset --hard HEAD~1
 
-## add upstream to a GitHub fork
+# add upstream to a GitHub fork
 git remote add upstream 'https://github.com/<ORIGINAL_OWNER>/<ORIGINAL_REPOSITORY>.git'
 
-## sync a GitHub fork with master.  Be sure to have added 'upstream' as a remote
+# sync a GitHub fork with master.  Be sure to have added 'upstream' as a remote
 git fetch upstream && git checkout master && git merge upstream/master
 
-## show content of last stash
+# show content of last stash
 git stash show -p
 
-## delete your local changes and replace with what is currently on master
+# delete your local changes and replace with what is currently on master
 git fetch --all && git reset --hard origin/master
 
-## don't use your system keychain for this repository
+# don't use your system keychain for this repository
 git config --local credential.helper ""
 
-## Have git prompt for your new password next push
+# Have git prompt for your new password next push
 git config --global --unset user.password
 
-## sync a branch with master
+# sync a branch with master
 git checkout master && git pull && git checkout '<BRANCH_TO_SYNC>' && git merge master
 
-## cherry pick a commit
+# cherry pick a commit
 git cherry-pick -x '<COMMIT_SHA>'
+
+# clear saved git passwords in macOS keychain, make sure to press enter key after each line.
+git credential-osxkeychain erase
+host=github.com
+protocol=https
 ```
 
 ## gpg
