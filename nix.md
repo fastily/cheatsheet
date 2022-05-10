@@ -348,8 +348,14 @@ systemctl daemon-reload
 
 ## tar
 ```bash
-# Extract a .tar.gz archive
-tar -xvzf '<PATH_TO_TARBALL>'
+# Extract .tar.gz
+tar -xvzf '<PATH_TO_TAR_FILE>'
+
+# Create .tar.xz, based out of the specified dir
+tar -cJf '<NAME_OF_FILE>.tar.xz' -C 'DIR_TO_USE_AS_ROOT_OF_TAR' .
+
+# Create .tar.xz, use as many threads as possible
+XZ_OPT='-T0' tar -cJf '<NAME_OF_FILE>.tar.xz' .
 ```
 
 ## ufw
