@@ -31,30 +31,6 @@ python3 manage.py collectstatic
 sudo systemctl restart gunicorn
 ```
 
-## pip
-```bash
-# generate requirements.txt
-pip freeze > requirements.txt
-
-# upgrade a package
-pip install --upgrade '<PACKAGE_NAME>'
-
-# list outdated packages
-pip list --outdated
-```
-
-## virtualenv
-```bash
-# create new venv
-mkdir -p '<FOLDER_TO_USE>' && virtualenv '<FOLDER_TO_USE>'
-
-# activate virtualenv (from outside virtualenv)
-source '<FOLDER_WITH_VIRTUALENV>/bin/activate'
-
-# exit virtualenv (from within the virtualenv) 
-deactivate
-```
-
 ## twine
 ```bash
 # generate distribution files (from within project's root folder)

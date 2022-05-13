@@ -379,10 +379,13 @@ ufw status
 ## wget
 ```bash
 # download all media files on a page
-wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off  '<WEBSITE_URL>'
+wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off '<WEBSITE_URL>'
 
-# resume cancelled (ctrl-c) download.  Server must support range header.
-wget -c '<WEBSITE_URL>'
+# recursively download the contents of a website
+wget -e robots=off -m -k -np -w 5 '<URL>'
+
+# download contents of an open directory (not recursive)
+wget --no-directories --no-parent -r -l 1 -H '<URL>'
 ```
 
 ## whois
@@ -397,8 +400,8 @@ whois example.com
 xxd -b '<THE_FILE>' | less
 ```
 
-## yotube-dl
+## yt-dlp
 ```bash
-# Download embed-only vimeo videos
-youtube-dl '<LINK_TO_VIDEO>' --referer '<LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>'
+# rip embedded vimeo
+yt-dlp '<LINK_TO_VIDEO>' --referer '<LINK_TO_PAGE_VIDEO_IS_EMBEDED_ON>'
 ```
