@@ -17,6 +17,9 @@ sudo dd bs=4M if='<PATH_TO_ISO>' of='<PATH_TO_USB_BLOCK_DEVICE>' && sync
 ```bash
 # recursively compare two directories and list differences
 diff -rq directory1/ directory2/
+
+# diff output of 2 commands
+diff <(command1 arg1 arg2) <(command2 arg1 arg2)
 ```
 
 ## dig

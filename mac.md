@@ -105,7 +105,16 @@ codesign -d --deep --verbose=2 -r- "<PATH_TO_APP>/App.app"
 ```
 
 ## Reset local account password
-````bash
+```bash
 # Recovery mode -> Terminal.  Can't be locked with Apple ID.
 resetpassword
+```
+
+## sips
+```bash
+# Convert a single file from heic to jpg, highest quality
+sips -s format jpeg -s formatOptions best -m "/System/Library/ColorSync/Profiles/Display P3.icc" '<INPUT_FILE>.heic' -o '<OUTPUT_FILE>.jpg>'
+
+# Convert multiple files from heic to jpg, highest quality
+sips -s format jpeg -s formatOptions best -m "/System/Library/ColorSync/Profiles/Display P3.icc" '<INPUT_1.HEIC>' '<INPUT_2.HEIC>' -o '<OUTPUT_DIR>/'
 ```
