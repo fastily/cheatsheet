@@ -155,6 +155,9 @@ sudo apt -y install kazam
 # trash management cli that actually works
 sudo apt -y install trash-cli
 
+# qemu
+sudo apt -y install virt-manager
+
 # zfs
 sudo apt -y install zfsutils-linux
 ```
