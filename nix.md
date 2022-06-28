@@ -7,6 +7,12 @@ sudo adduser '<NEW_USERNAME>'
 sudo adduser --disabled-password '<NEW_USERNAME>'
 ```
 
+## curl
+```bash
+# perform a GET request, print headers to stdout
+curl -s -L -D - -o /dev/null '<URL>'
+```
+
 ## dd
 ```bash
 # Write ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
@@ -29,6 +35,9 @@ dig example.com
 
 # return MX records only
 dig example.com MX
+
+# use a specific dns server
+dig @1.1.1.1 A httpbin.org
 ```
 
 ## eyeD3
