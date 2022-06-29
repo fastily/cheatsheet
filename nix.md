@@ -171,7 +171,6 @@ iperf3 -s
 iperf3 -c '<SERVER_IP>'
 ```
 
-
 ## lsof
 ```bash
 # Quickly (-n) list all open sockets by port (-P) on local device
@@ -210,6 +209,11 @@ nmap -sP 10.0.1.0/24
 * `--allports` - enables scanning on 9100, a printer port.  Caveat: some printers print anything sent to this port.
 * `-T4`/`-T5` - use an aggressive/insane timing template
 
+## nc
+```bash
+# check if a port is open, close connection immediately
+nc -z '<SERVER_IP>' '<PORT>'
+```
 
 ## php
 ```bash

@@ -140,6 +140,11 @@ zpool scrub '<NAME_OF_POOL>'
 zpool scrub -s '<NAME_OF_POOL>'
 ```
 
+## nfs
+```bash
+# list all shares
+sudo exportfs -v
+```
 
 ## Useful Programs
 ```bash
@@ -154,9 +159,6 @@ sudo apt -y install kazam
 
 # trash management cli that actually works
 sudo apt -y install trash-cli
-
-# qemu
-sudo apt -y install virt-manager
 
 # zfs
 sudo apt -y install zfsutils-linux
