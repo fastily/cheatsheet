@@ -49,6 +49,11 @@ ffmpeg -i '<INPUT_FILE>' -r 15 -vf "scale=512:-1,split[s0][s1];[s0]palettegen[p]
 ffmpeg -i '<INPUT_FILE>' -c:a copy -c:v copy -ss 5 -to 120 '<OUTPUT_FILE>'
 ```
 
+## Map audio to existing video
+
+```bash
+ffmpeg -i '<INPUT_FILE_VIDEO>' -i '<INPUT_FILE_AUDIO>' -map 0:v -map 1:a -c:v copy -shortest '<OUTPUT_FILE>'
+```
 
 ## Video Effects
 ### Rotation
