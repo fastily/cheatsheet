@@ -1,28 +1,28 @@
 ## django
 ```bash
 # install dependencies
-pip3 install Django pylint pylint-django
+pip install Django pylint pylint-django
 
 # create new project
 django-admin startproject '<PROJECT_NAME>'
 
 # add sub-app to project
-python3 manage.py startapp '<APP_NAME>'
+python manage.py startapp '<APP_NAME>'
 
 # start server
-python3 manage.py runserver
+python manage.py runserver
 
 # create migration
-python3 manage.py makemigrations
+python manage.py makemigrations
 
 # migrate db
-python3 manage.py migrate
+python manage.py migrate
 
 # create superuser for admin panel
-python3 manage.py createsuperuser
+python manage.py createsuperuser
 
 # collect static files into one folder
-python3 manage.py collectstatic
+python manage.py collectstatic
 ```
 
 ## gunicorn

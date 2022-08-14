@@ -36,8 +36,8 @@ dig example.com
 # return MX records only
 dig example.com MX
 
-# use a specific dns server
-dig @1.1.1.1 A httpbin.org
+# use a specific dns server (e.g. cloudflare)
+dig @1.1.1.1 A 'example.com'
 ```
 
 ## eyeD3
