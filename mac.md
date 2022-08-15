@@ -118,3 +118,9 @@ sips -s format jpeg -s formatOptions best -m "/System/Library/ColorSync/Profiles
 # Convert multiple files from heic to jpg, highest quality
 sips -s format jpeg -s formatOptions best -m "/System/Library/ColorSync/Profiles/Display P3.icc" '<INPUT_1.HEIC>' '<INPUT_2.HEIC>' -o '<OUTPUT_DIR>/'
 ```
+
+## plutil
+```bash
+# Print contents of a plist in a human readable format
+plutil -p '<PATH_TO_PLIST>'
+```
