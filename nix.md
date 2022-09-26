@@ -103,6 +103,10 @@ git cherry-pick -x '<COMMIT_SHA>'
 git credential-osxkeychain erase
 host=github.com
 protocol=https
+
+# permanently delete all dangling commits
+git reflog expire --expire-unreachable=now --all
+git gc --prune=now
 ```
 
 ## gpg
