@@ -103,7 +103,7 @@ docker image build -t '<TAG_NAME>' '<DIRECTORY_TO_BUILD_IN>'
 docker image rm '<IMAGE_ID>'
 
 # remove all images without at least one associated container
-docker image prune -a
+docker image prune -a -f
 ```
 
 ## volume
