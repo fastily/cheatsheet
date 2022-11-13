@@ -389,14 +389,17 @@ ufw app list
 # allow a profile/rule
 ufw allow '<PROFILE/PORT>'
 
-# delete an allow rule
-ufw delete allow '<PROFILE/PORT>'
+# show status
+ufw status
+
+# show status with rule priority
+ufw status numbered
+
+# delete a rule with id obtained from 'ufw status numbered'
+ufw delete '<RULE_ID>'
 
 # start firewall
 ufw enable
-
-# show status
-ufw status
 ```
 
 ## wget

@@ -184,3 +184,9 @@ hostnamectl set-hostname '<NEW_HOSTNAME>'
 # power off an external hard drive (do this after unmounting)
 sudo udisksctl power-off -b '/dev/<DEVICE_ID>'
 ```
+
+## sshd log
+```bash
+# view 100 most recent sshd log entries
+grep "sshd" "/var/log/auth.log" | tail -n 100 | less
+```
