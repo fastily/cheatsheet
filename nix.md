@@ -320,6 +320,9 @@ sox '<INPUT_FILE>' -n spectrogram -o out.png
 
 ## ssh
 ```bash
+# run a local script on a server
+ssh 'username@hostname' 'bash -s' < '<LOCAL_PATH_TO_SCRIPT>'
+
 # List supported key types on a client
 ssh -Q key
 
