@@ -45,19 +45,19 @@ fg %N # where N is the job number obtained from jobs
 bg %N # where N is the job number obtained from jobs
 ```
 
-## Arrays
-```bash
-# Prepend Foo to every array element
-${arr[@]/#/Foo}
-
-# Append Foo to every array element
-${arr[@]/%/Foo}
-```
-
-## Special Variables
+## Variables
 ```bash
 # Get cli args but only from the 2nd element and onwards
 "${@:2}"
+
+# Prepend Foo to every element of an array, MY_ARRAY
+${MY_ARRAY[@]/#/Foo}
+
+# Append Foo to every element of an array, MY_ARRAY
+${MY_ARRAY[@]/%/Foo}
+
+# Convert a string, referenced by MY_VAR, to lowercase
+"${MY_VAR,,}"
 ```
 
 ## slurp file into variable
