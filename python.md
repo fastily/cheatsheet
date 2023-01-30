@@ -39,3 +39,9 @@ python -m build # requires build package - pip install build
 # upload generated distribution files to pypi
 twine upload '<DIST_FOLDER_WITH_GENERATED_PACKAGES>'/*
 ```
+
+## pip
+```bash
+# Create an editable install that works with vscode/pylance
+pip install -e '<PATH_TO_PKG_DIR>' --config-settings editable_mode=compat
+```
