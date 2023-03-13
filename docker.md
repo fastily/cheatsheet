@@ -112,7 +112,7 @@ docker image prune -af
 docker volume ls
 
 # delete unused local volumes
-docker volume prune -f
+docker volume rm $(docker volume ls -qf dangling=true)
 ```
 
 ## dockerfile
