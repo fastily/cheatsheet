@@ -190,3 +190,8 @@ sudo udisksctl power-off -b '/dev/<DEVICE_ID>'
 # view 100 most recent sshd log entries
 grep "sshd" "/var/log/auth.log" | tail -n 100 | less
 ```
+
+## write xz'd img to SD card
+```bash
+xzcat '<PATH_TO_IMG_XZ>' | dd of='<PATH_TO_DEVICE>' bs=4M
+```
