@@ -30,6 +30,9 @@ apt-get remove '<PACKAGE_NAME>'
 
 # Remove package and delete all of its config files
 apt-get purge '<PACKAGE_NAME>'
+
+# Bypass phased upgrades nonsense
+sudo apt -o APT::Get::Always-Include-Phased-Updates=true upgrade -y
 ```
 
 ## mdadm
