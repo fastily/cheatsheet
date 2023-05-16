@@ -7,11 +7,6 @@ chflags hidden '<FILE_NAME>'
 chflags nohidden '<FILE_NAME>'
 ```
 
-## Recursively delete .DS_STORE
-```bash
-find . -name '*.DS_Store' -type f -delete
-```
-
 ## Make password-protected, encypted zips
 ```bash
 # Encypt and zip two files
@@ -51,7 +46,7 @@ for d in */ ; do
 done
 ```
 
-## Show hardware information
+## Get info about the Mac
 ```bash
 # general hardware information
 system_profiler SPHardwareDataType
@@ -61,6 +56,9 @@ sysctl -n machdep.cpu.brand_string
 
 # show arch
 uname -m
+
+# get macOS version
+sw_vers -productVersion
 ```
 
 ## Xcode

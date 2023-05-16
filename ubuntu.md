@@ -163,6 +163,9 @@ sudo apt -y install kazam
 # trash management cli that actually works
 sudo apt -y install trash-cli
 
+# ubuntu minimal desktop
+sudo apt -y install ubuntu-desktop-minimal
+
 # zfs
 sudo apt -y install zfsutils-linux
 ```
