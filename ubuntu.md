@@ -33,6 +33,7 @@ apt-get purge '<PACKAGE_NAME>'
 
 # Bypass phased upgrades nonsense
 sudo apt -o APT::Get::Always-Include-Phased-Updates=true upgrade -y
+sudo apt dist-upgrade -y # yolo
 ```
 
 ## mdadm
