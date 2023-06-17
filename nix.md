@@ -276,6 +276,12 @@ other interesting args:
 pgrep -f '<PATTERN>'
 ```
 
+## poppler
+```bash
+# Extract images from pdf
+pdfimages -all '<INPUT_PDF>' '<OUTPUT_DIR>/<IMAGE_PREFIX_TO_USE>'
+```
+
 ## screen
 ```bash
 # Start a new screen
