@@ -167,6 +167,9 @@ convert -density 288 '<INPUT_PDF>' '<OUTPUT_PNG>'
 
 # Convert a svg to png with height 1000, high density, and alpha transparency
 convert -resize x1000 -density 1200 -background none '<INPUT_SVG>' 'OUTPUT_PNG'
+
+# get detailed information about an image
+magick identify -verbose '<PATH_TO_IMG>'
 ```
 
 ## iperf3
