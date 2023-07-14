@@ -219,10 +219,11 @@ nmap -sP 10.0.1.0/24
 * `--allports` - enables scanning on 9100, a printer port.  Caveat: some printers print anything sent to this port.
 * `-T4`/`-T5` - use an aggressive/insane timing template
 
+
 ## nc
 ```bash
 # check if a port is open, close connection immediately
-nc -z '<SERVER_IP>' '<PORT>'
+nc -vz '<SERVER_IP>' '<PORT>'
 ```
 
 ## php
