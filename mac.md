@@ -122,3 +122,9 @@ sips -s format jpeg -s formatOptions best -m "/System/Library/ColorSync/Profiles
 # Print contents of a plist in a human readable format
 plutil -p '<PATH_TO_PLIST>'
 ```
+
+## Internet speed test
+```bash
+# uses Apple's servers
+networkQuality -v
+```
