@@ -49,6 +49,9 @@ eyeD3 -A '<ALBUM_NAME>' -b '<ALBUM_NAME>' --add-image '<PATH_TO_FILE>':FRONT_COV
 ```bash
 # delete all GPS and XMP metadata from a media file
 exiftool -gps:all= -xmp-exif:all= '<FILES_TO_PROCESS>'
+
+# delete all EXIF tags from a media file and overwrite original
+exiftool -EXIF= -overwrite_original '<FILE_TO_PROCESS>'
 ```
 
 ## find
