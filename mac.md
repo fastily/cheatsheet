@@ -51,6 +51,9 @@ done
 # general hardware information
 system_profiler SPHardwareDataType
 
+# show info about battery cycles and/or connected AC adapter
+system_profiler SPPowerDataType
+
 # show name of CPU
 sysctl -n machdep.cpu.brand_string
 
@@ -127,4 +130,10 @@ plutil -p '<PATH_TO_PLIST>'
 ```bash
 # uses Apple's servers
 networkQuality -v
+```
+
+## open
+```bash
+# reveal the file in a new finder window
+open -R '<PATH_TO_FILE>'
 ```
