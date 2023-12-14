@@ -29,6 +29,9 @@ ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=10dB" '<OUTPUT_FILE>'
 # Convert a video to mov (x265) with okay quality
 ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -c:a aac -vbr 3 -tag:v hvc1 out.mov
 
+# Convert video to x264
+ffmpeg -i '<INPUT_FILE>' -c:v libx264 -preset slow -crf 22 -c:a aac -vbr 3 -pix_fmt yuv420p -movflags +faststart out.mp4
+
 # Convert video to ogv
 ffmpeg -i '<INPUT_FILE>' -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
 
