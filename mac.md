@@ -26,6 +26,9 @@ softwareupdate -i '<FULL_NAME_OF_UPDATE>'
 
 # Install all available updates
 softwareupdate -ai
+
+# List recent update history
+softwareupdate --history
 ```
 
 ## Show information about a volume
