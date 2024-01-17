@@ -83,3 +83,9 @@ bash -x "<COMMAND_TO_RUN>"
 ```bash
 > '<PATH_TO_FILE>'
 ```
+
+## Recursively move files to new directory
+```bash
+# recursively move all MOV files in cwd to a new dir
+mv ./**/*.MOV '<TARGET_DIR>'
+```
