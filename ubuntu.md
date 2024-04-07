@@ -118,6 +118,9 @@ sudo zpool create '<SOME_NAME_HERE>' '/dev/<DEVICE_ID1>' '/dev/<DEVICE_ID2>' '/d
 # check zpool statues
 zpool status
 
+# list all properties of a zpool
+zfs get all '<NAME_OF_ZPOOL>'
+
 # move zpool mount location
 sudo zfs set mountpoint='<PATH_TO_NEW_MOUNT_POINT>' '<NAME_OF_ZPOOL>'
 
