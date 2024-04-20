@@ -151,6 +151,9 @@ zpool scrub -s '<NAME_OF_POOL>'
 ```bash
 # list all shares
 sudo exportfs -v
+
+# reset nfs after editing /etc/exports
+sudo exportfs -r
 ```
 
 ## Useful Programs
