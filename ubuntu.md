@@ -164,6 +164,9 @@ sudo apt -y install smartmontools gsmartcontrol
 # GUI Partioner
 sudo apt -y install gparted
 
+# LAN speed tester
+sudo apt -y install iperf3
+
 # screen recorder
 sudo apt -y install kazam
 
