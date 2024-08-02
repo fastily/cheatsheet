@@ -25,3 +25,8 @@ sudo apt -y install openjdk-11-jre-headless
 # samba
 sudo apt -y install samba samba-common-bin
 ```
+
+## Get CPU temp
+```bash
+vcgencmd measure_temp
+```
