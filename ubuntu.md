@@ -10,7 +10,7 @@ trash-list
 trash-empty
 ```
 
-## apt and dpkg
+## apt & dpkg
 ```bash
 # Install a .deb
 dpkg -i '<PATH_TO_DEB_FILE>'
@@ -34,6 +34,9 @@ apt-get purge '<PACKAGE_NAME>'
 # Bypass phased upgrades nonsense
 sudo apt -o APT::Get::Always-Include-Phased-Updates=true upgrade -y
 sudo apt dist-upgrade -y # yolo
+
+# Determine the package a binary belongs to
+dpkg -S '<NAME_OF_BINARY>'
 ```
 
 ## mdadm
