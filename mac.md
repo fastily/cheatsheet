@@ -127,6 +127,9 @@ sips -s format jpeg -s formatOptions best -m "/System/Library/ColorSync/Profiles
 ```bash
 # Print contents of a plist in a human readable format
 plutil -p '<PATH_TO_PLIST>'
+
+# Print a binary plist in XML format
+plutil -convert xml1 -o - '<PATH_TO_PLIST>'
 ```
 
 ## Internet speed test
