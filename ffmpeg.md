@@ -10,7 +10,10 @@ ffmpeg -i '<INPUT_FILE>' -vn -c:a flac out.flac
 ffmpeg -i '<INPUT_FILE>' -vn -c:a pcm_s16le out.wav
 
 # Convert audio to oga
-ffmpeg -i '<INPUT_FILE>' -vn -c:a libvorbis -q:a 10 out.oga
+ffmpeg -i '<INPUT_FILE>' -vn -c:a libvorbis -q:a 8 out.oga
+
+# Convert audio to opus
+ffmpeg -i '<INPUT_FILE>' -vn -c:a libopus -b:a 96k out.opus
 
 # Convert every flac file in the current directory to mp3
 for f in *.flac; do ffmpeg -i  "$f" -vn -c:a libmp3lame -b:a 320k "${f%.flac}.mp3"; done;
