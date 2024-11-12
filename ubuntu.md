@@ -173,6 +173,9 @@ sudo apt -y install iperf3
 # screen recorder
 sudo apt -y install kazam
 
+# useful mkv tools
+sudo apt -y install mkvtoolnix
+
 # trash management cli that actually works
 sudo apt -y install trash-cli
 
@@ -213,4 +216,10 @@ grep "sshd" "/var/log/auth.log" | tail -n 100 | less
 ## write xz'd img to SD card
 ```bash
 xzcat '<PATH_TO_IMG_XZ>' | sudo dd of='<PATH_TO_DEVICE>' bs=4M
+```
+
+## mkvtoolnix
+```bash
+# Concatenate mkv files.  Note the plus sign on input2.mkv
+mkvmerge -o "OUTPUT.MKV" "input1.mkv" "+input2.mkv"
 ```

@@ -26,7 +26,6 @@ ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=10dB" '<OUTPUT_FILE>'
 
 ```
 
-
 ## Transcode Video
 ```bash
 # Convert a video to mov (x265) with okay quality
@@ -48,13 +47,11 @@ for f in *.MOV; do ffmpeg -i "$f" -an -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 
 ffmpeg -i '<INPUT_FILE>' -r 15 -vf "scale=512:-1,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" '<OUTPUT_FILE>'
 ```
 
-
 ## Trim audio/video
 ```bash
 # Trim audio/video (ex: start at 5 sec and go until 2 min)
 ffmpeg -i '<INPUT_FILE>' -c:a copy -c:v copy -ss 5 -to 120 '<OUTPUT_FILE>'
 ```
-
 
 ## Video Effects
 ### Rotation
@@ -92,7 +89,6 @@ for f in *.MOV; do ffmpeg -i "$f" -an -r 30 -vf "setpts=8*PTS" -c:v libvpx-vp9 -
 ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -vf yadif -an -tag:v hvc1 out.mov
 ```
 
-
 ## Join MP4s
 ```bash
 # Convert all files to ts, then concatenate them
@@ -106,4 +102,9 @@ ffmpeg -i "concat:FILE1.ts|FILE2.ts|FILE3.ts" -c copy -bsf:a aac_adtstoasc '<OUT
 ```bash
 # loop a a/v file 5 times and dump the result into the output
 ffmpeg -stream_loop 5 -i '<INPUT_FILE>' -c copy '<OUTPUT_FILE>'
+```
+
+## combine srt & video into mkv
+```bash
+ffmpeg -fflags +genpts -i '<VIDEO_FILE>' -f srt -i '<SRT_FILE>' -map 0:0 -map 0:1 -map 1:0  -c:v copy -c:a copy -c:s srt 'OUTPUT.mkv'
 ```
