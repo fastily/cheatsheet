@@ -6,18 +6,6 @@ while read theLine || [[ -n $theLine ]]; do
 done < "<THE_FILE_NAME>"
 ```
 
-## join function
-```bash
-join_by() {
-	local IFS="$1"
-	shift
-	echo "$*"
-}
-
-# example
-join_by , a "b c" d #a,b c,d
-```
-
 ## ! commands
 ```bash
 # re-run last command
