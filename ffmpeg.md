@@ -23,7 +23,6 @@ ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=1.5" '<OUTPUT_FILE>'
 
 # increase audio by 10dB
 ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=10dB" '<OUTPUT_FILE>'
-
 ```
 
 ## Transcode Video
@@ -108,3 +107,10 @@ ffmpeg -stream_loop 5 -i '<INPUT_FILE>' -c copy '<OUTPUT_FILE>'
 ```bash
 ffmpeg -fflags +genpts -i '<VIDEO_FILE>' -f srt -i '<SRT_FILE>' -map 0:0 -map 0:1 -map 1:0  -c:v copy -c:a copy -c:s srt 'OUTPUT.mkv'
 ```
+
+## Create spectrogram of audio file
+```bash
+ffmpeg -i '<INPUT_FILE>' -lavfi showspectrumpic '<OUTPUT_NAME>.png'
+```
+
+* Spectrogram [reference](https://old.reddit.com/r/trap/comments/3l5l3q/a_guide_to_determining_the_true_quality_of_an/)
