@@ -197,6 +197,12 @@ lsof -Pn -i4
 ln -s '<DIRECTORY_TO_LINK_TO>' '<NEW_SYM_LINK_NAME>'
 ```
 
+## ls
+```bash
+# natural sort files in a directory
+ls -1 -v
+```
+
 ## nginx
 ```bash
 # restart an nginx service
