@@ -174,6 +174,9 @@ convert -resize x1000 -density 1200 -background none '<INPUT_SVG>' 'OUTPUT_PNG'
 
 # get detailed information about an image
 magick identify -verbose '<PATH_TO_IMG>'
+
+# append files vertically
+magick '1.webp' '2.webp' '3.webp' -append 'OUT.webp'
 ```
 
 ## iperf3
