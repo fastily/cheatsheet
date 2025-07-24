@@ -19,7 +19,7 @@ curl -s -L -D - -o /dev/null '<URL>'
 ## dd
 ```bash
 # Write ISO to a USB.  Be sure to unmount any mounted partitions before attempting.
-sudo dd bs=4M if='<PATH_TO_ISO>' of='<PATH_TO_USB_BLOCK_DEVICE>' && sync
+sudo dd if='<PATH_TO_ISO>' of='<PATH_TO_USB_BLOCK_DEVICE>' bs=4M status=progress && sync
 ```
 
 ## diff
