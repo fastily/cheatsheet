@@ -28,16 +28,19 @@ ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=10dB" '<OUTPUT_FILE>'
 ## Transcode Video
 ```bash
 # Convert a video to mov (x265) with okay quality
-ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -c:a aac -vbr 3 -tag:v hvc1 out.mov
+ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -preset slower -c:a aac -vbr 3 -tag:v hvc1 'out.mov'
+
+# Convert a video to mkv (x265) with okay good quality
+ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -preset slower -c:a aac -b:a 96k 'out.mkv'
 
 # Convert video to x264
-ffmpeg -i '<INPUT_FILE>' -c:v libx264 -preset slow -crf 22 -c:a aac -vbr 3 -pix_fmt yuv420p -movflags +faststart out.mp4
+ffmpeg -i '<INPUT_FILE>' -c:v libx264 -preset slow -crf 22 -c:a aac -vbr 3 -pix_fmt yuv420p -movflags +faststart 'out.mp4'
 
 # Convert video to ogv
-ffmpeg -i '<INPUT_FILE>' -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 out.ogv
+ffmpeg -i '<INPUT_FILE>' -c:v libtheora -q:v 10 -c:a libvorbis -q:a 10 'out.ogv'
 
 # Convert video to webm
-ffmpeg -i '<INPUT_FILE>' -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -c:a libvorbis -q:a 8 -f webm out.webm
+ffmpeg -i '<INPUT_FILE>' -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -c:a libvorbis -q:a 8 -f webm 'out.webm'
 
 # Convert every MOV file in the current directory to audioless webm
 for f in *.MOV; do ffmpeg -i "$f" -an -c:v libvpx-vp9 -b:v 0 -crf 24 -threads 4 -speed 0 -f webm "${f%.MOV}.webm"; done;
