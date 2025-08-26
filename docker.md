@@ -34,7 +34,7 @@ docker container top '<CONTAINER_ID>'
 docker container rm -f '<CONTAINER_ID>'
 
 # remove all stopped containers
-docker rm $(docker ps -a -q)
+docker container prune -f
 
 # show json metadata about container (startup config, volumes, networking, etc)
 docker container inspect '<CONTAINER_ID>'
@@ -111,8 +111,8 @@ docker image prune -af
 # list volumes
 docker volume ls
 
-# delete unused local volumes
-docker volume rm $(docker volume ls -qf dangling=true)
+# determine which container a volume belongs to
+docker ps -a --filter volume=VOLUME_NAME_OR_MOUNT_POINT
 ```
 
 ## dockerfile

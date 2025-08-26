@@ -30,7 +30,7 @@ ffmpeg -i '<INPUT_FILE>' -vn -filter:a "volume=10dB" '<OUTPUT_FILE>'
 # Convert a video to mov (x265) with okay quality
 ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -preset slower -c:a aac -vbr 3 -tag:v hvc1 'out.mov'
 
-# Convert a video to mkv (x265) with okay good quality
+# Convert a video to mkv (x265) with okay quality
 ffmpeg -i '<INPUT_FILE>' -c:v libx265 -crf 28 -preset slower -c:a aac -b:a 96k 'out.mkv'
 
 # Convert video to x264
