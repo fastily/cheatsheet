@@ -45,3 +45,15 @@ twine upload '<DIST_FOLDER_WITH_GENERATED_PACKAGES>'/*
 # Create an editable install that works with vscode/pylance
 pip install -e '<PATH_TO_PKG_DIR>' --config-settings editable_mode=compat
 ```
+
+## uv
+```bash
+# bump patch version of module before publishing (updates uv.lock & pyproject.toml)
+uv version --bump patch
+
+# build artifacts
+uv build
+
+# publish to pypi
+uv publish
+```

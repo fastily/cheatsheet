@@ -215,7 +215,7 @@ grep "sshd" "/var/log/auth.log" | tail -n 100 | less
 
 ## write xz'd img to SD card
 ```bash
-xzcat '<PATH_TO_IMG_XZ>' | sudo dd of='<PATH_TO_DEVICE>' bs=4M
+xzcat '<PATH_TO_IMG_XZ>' | sudo dd of='<PATH_TO_DEVICE>' bs=4M status=progress
 ```
 
 ## mkvtoolnix
