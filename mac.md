@@ -143,3 +143,9 @@ networkQuality -v
 # reveal the file in a new finder window
 open -R '<PATH_TO_FILE>'
 ```
+
+## Homebrew
+```bash
+# list forumlae *you* manually installed and are not required by any other installed package
+brew leaves -r
+```
