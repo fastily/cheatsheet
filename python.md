@@ -56,4 +56,13 @@ uv build
 
 # publish to pypi
 uv publish
+
+# install package from local repo
+uv tool install --editable '<PATH_TO_DIR>'
+
+# setup repo for local dev
+uv sync
+
+# bump package versions in lockfile
+uv lock --upgrade
 ```
