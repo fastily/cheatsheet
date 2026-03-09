@@ -82,14 +82,14 @@ git reset --hard HEAD~1
 # add upstream to a GitHub fork
 git remote add upstream 'https://github.com/<ORIGINAL_OWNER>/<ORIGINAL_REPOSITORY>.git'
 
-# sync a GitHub fork with master.  Be sure to have added 'upstream' as a remote
-git fetch upstream && git checkout master && git merge upstream/master
+# sync a GitHub fork with main.  Be sure to have added 'upstream' as a remote
+git fetch upstream && git checkout main && git merge upstream/main
 
 # show content of last stash
 git stash show -p
 
-# delete your local changes and replace with what is currently on master
-git fetch --all && git reset --hard origin/master
+# delete your local changes and replace with what is currently on main
+git fetch --all && git reset --hard origin/main
 
 # don't use your system keychain for this repository
 git config --local credential.helper ""
@@ -97,11 +97,15 @@ git config --local credential.helper ""
 # Have git prompt for your new password next push
 git config --global --unset user.password
 
-# sync a branch with master
-git checkout master && git pull && git checkout '<BRANCH_TO_SYNC>' && git merge master
-
 # cherry pick a commit
-git cherry-pick -x '<COMMIT_SHA>'
+git cherry-pick -x '<COMMIT_SHA...>'
+
+# revert a commit
+git revert '<COMMIT_SHA>'
+
+# return branch state to specified commit
+git restore --source='<COMMIT_SHA>' --staged --worktree ":/"
+
 
 # clear saved git passwords in macOS keychain, make sure to press enter key after each line.
 git credential-osxkeychain erase
