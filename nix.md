@@ -106,7 +106,6 @@ git revert '<COMMIT_SHA>'
 # return branch state to specified commit
 git restore --source='<COMMIT_SHA>' --staged --worktree ":/"
 
-
 # clear saved git passwords in macOS keychain, make sure to press enter key after each line.
 git credential-osxkeychain erase
 host=github.com
