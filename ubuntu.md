@@ -223,3 +223,20 @@ xzcat '<PATH_TO_IMG_XZ>' | sudo dd of='<PATH_TO_DEVICE>' bs=4M status=progress
 # Concatenate mkv files.  Note the plus sign on input2.mkv
 mkvmerge -o "OUTPUT.MKV" "input1.mkv" "+input2.mkv"
 ```
+
+## sysctl
+```bash
+# read current values of sysctl network params
+sysctl net.ipv4.ip_local_port_range net.core.somaxconn net.ipv4.tcp_tw_reuse
+```
+
+## netstat
+```bash
+# count # of connections currently in tcp wait (cooldown after connection closed) state.  If this number is high you may be running out of ports
+netstat -an | grep TIME_WAIT | wc -l
+```
+
+## view limits for a process
+```bash
+cat "/proc/<PID>/limits"
+```

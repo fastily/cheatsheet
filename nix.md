@@ -195,6 +195,9 @@ iperf3 -c '<SERVER_IP>'
 ```bash
 # Quickly (-n) list all open sockets by port (-P) on local device
 lsof -Pn -i4
+
+# count # of open file descriptors open by specified PID
+lsof -p '<PID>' | wc -l
 ```
 
 ## ln
