@@ -62,7 +62,4 @@ uv tool install --editable '<PATH_TO_DIR>'
 
 # setup repo for local dev
 uv sync
-
-# bump package versions in lockfile
-uv lock --upgrade
 ```
