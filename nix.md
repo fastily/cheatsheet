@@ -91,8 +91,8 @@ git stash show -p
 # delete your local changes and replace with what is currently on main
 git fetch --all && git reset --hard origin/main
 
-# don't use your system keychain for this repository
-git config --local credential.helper ""
+# don't use global username, email, & system keychain for current repository
+git config --local user.name "" && git config --local user.email "" && git config --local credential.helper ""
 
 # Have git prompt for your new password next push
 git config --global --unset user.password
