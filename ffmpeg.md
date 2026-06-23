@@ -74,6 +74,11 @@ ffmpeg -i '<INPUT_FILE>' -c copy -metadata:s:v rotate="90" '<OUTPUT_FILE>'
 * [Rotate Guide](https://stackoverflow.com/a/9570992/5987787)
 * [How to rotate a video 180° with FFmpeg?](https://superuser.com/questions/578321/how-to-rotate-a-video-180-with-ffmpeg)
 
+### Downsize Video to 720p
+```bash
+ffmpeg -i '<INPUT_FILE>' -vf "scale=-2:720" -c:v libx264 -preset slow -crf 22 -pix_fmt yuv420p -movflags +faststart -c:a copy '<OUTPUT_FILE>'
+```
+
 ### Slow-Motion/Timelapse
 ```bash
 # Timelapse - 16x slowdown, forced 60fps
