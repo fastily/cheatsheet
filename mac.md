@@ -149,3 +149,8 @@ open -R '<PATH_TO_FILE>'
 # list forumlae *you* manually installed and are not required by any other installed package
 brew leaves -r
 ```
+
+## Prevent sleep
+```
+caffeinate -d
+```
