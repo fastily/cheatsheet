@@ -240,3 +240,8 @@ netstat -an | grep TIME_WAIT | wc -l
 ```bash
 cat "/proc/<PID>/limits"
 ```
+
+## get r/w details for disks
+```bash
+iostat -x 1
+```
